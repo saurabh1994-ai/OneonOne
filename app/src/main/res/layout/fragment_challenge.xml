@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:orientation="vertical"
+        style="@style/matchmatch"
+        android:background="@color/light_gray">
+
+        <ImageView
+          style="@style/matchmatch"
+            android:background="@drawable/teaser_image"/>
+
+        <RelativeLayout
+            style="@style/matchwrap"
+            android:layout_margin="@dimen/margin_ten">
+
+            <ImageButton
+                android:id="@+id/back"
+                style="@style/wrapwrap"
+                android:src="@drawable/back_icon"
+                android:background="@null"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvFollowers"
+                style="@style/matchwrap"
+                android:layout_toRightOf="@+id/back"/>
+
+            <ImageButton
+                style="@style/wrapwrap"
+                android:src="@drawable/share_icon"
+                android:background="@null"
+                android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

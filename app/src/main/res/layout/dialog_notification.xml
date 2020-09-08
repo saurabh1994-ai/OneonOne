@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        style="@style/matchwrap">
+        <LinearLayout
+            style="@style/matchwrap"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_white_rectangle_20"
+            android:layout_centerInParent="true">
+            <ImageView
+                android:id="@+id/ivMessage"
+                style="@style/wrapwrap"
+                android:layout_marginTop="@dimen/margin_fifteen"/>
+            <TextView
+                android:id="@+id/tvMessage"
+                style="@style/wrapwrap"
+                android:textSize="@dimen/text_size_sixteen"
+                android:padding="@dimen/margin_fifteen"
+                android:textColor="@color/black"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/margin_twenty"
+                android:layout_marginEnd="@dimen/margin_twenty"/>
+            <TextView
+                android:id="@+id/okBtn"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:text="@string/ok"
+                android:textSize="@dimen/text_size_sixteen"
+                android:padding="@dimen/margin_ten"
+                android:textColor="@color/white"
+                android:layout_marginTop="@dimen/margin_fifteen"
+                android:layout_marginBottom="@dimen/margin_fifteen"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center_horizontal"
+                android:background="@drawable/bg_button_red"/>
+        </LinearLayout>
+        <pl.droidsonroids.gif.GifImageView
+            style="@style/matchmatch"
+            android:id="@+id/dancer"
+            android:background="@android:color/transparent"
+            android:src="@drawable/animation_giphy"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</layout>

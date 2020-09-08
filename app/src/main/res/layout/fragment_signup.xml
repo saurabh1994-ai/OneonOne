@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="signUpVM"
+            type="com.sws.oneonone.viewModel.SignUpVM" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+    <RelativeLayout
+        style="@style/matchmatch"
+        android:background="@drawable/login_bg"
+        android:paddingLeft="@dimen/margin_ten"
+        android:paddingRight="@dimen/margin_ten"
+        android:paddingBottom="@dimen/margin_ten"
+        >
+
+        <ImageView
+            android:id="@+id/btnBack"
+            style="@style/wrapwrap"
+            android:onClick="@{(v) -> signUpVM.onBackClick()}"
+            android:src="@drawable/back_btn"
+            android:padding="@dimen/margin_ten" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/btnBack"
+            android:padding="10dp"
+            >
+            <ImageView
+                style="@style/wrapwrap"
+                android:background="@drawable/icon_app"
+                />
+            <ImageView
+                style="@style/wrapwrap"
+                android:layout_marginTop="@dimen/margin_ten"
+                android:background="@drawable/text"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/margin_ten"
+            android:paddingRight="@dimen/margin_ten"
+            android:layout_alignParentBottom="true"
+            >
+            <RelativeLayout
+                android:id="@+id/rlName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_edit_white_transparent"
+                >
+                <ImageView
+                    android:id="@+id/ivFullName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/user_icon"
+                    android:tint="@color/black"
+                    android:layout_marginLeft="@dimen/margin_ten"
+                    android:layout_centerVertical="true"
+                    />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fullName"
+                    style="@style/matchwrap"
+                    android:layout_toRightOf="@+id/ivFullName"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/edit_text_color"
+                    android:hint="@string/full_name"
+                    android:background="@null"
+                    android:paddingLeft="@dimen/margin_ten"
+                    android:singleLine="true"
+                    android:padding="@dimen/text_size_ten"
+                    android:text="@={signUpVM.fullName}"
+                    android:inputType="textEmailAddress"
+                    android:textSize="@dimen/text_size_sixteen"
+                    android:fontFamily="@font/montserrat_semibold" />
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="@dimen/margin_ten"
+                android:background="@drawable/bg_edit_white_transparent"
+                >
+                <ImageView
+                    android:id="@+id/ivUserIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/user_icon"
+                    android:tint="@color/black"
+                    android:layout_marginLeft="@dimen/margin_ten"
+                    android:layout_centerVertical="true"
+                    />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/userName"
+                    style="@style/matchwrap"
+                    android:layout_toRightOf="@+id/ivUserIcon"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/edit_text_color"
+                    android:hint="@string/username"
+                    android:background="@null"
+                    android:paddingLeft="@dimen/margin_ten"
+                    android:singleLine="true"
+                    android:padding="@dimen/text_size_ten"
+                    android:text="@={signUpVM.userName}"
+                    android:inputType="textEmailAddress"
+                    android:textSize="@dimen/text_size_sixteen"
+                    android:fontFamily="@font/montserrat_semibold"/>
+
+
+                <ImageView
+                    android:id="@+id/ivCheck"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/animated_check"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/margin_ten"/>
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="@dimen/margin_ten"
+                android:background="@drawable/bg_edit_white_transparent"
+                >
+                <ImageView
+                    android:id="@+id/ivEmailIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/emai"
+                    android:tint="@color/black"
+                    android:layout_marginLeft="@dimen/margin_ten"
+                    android:layout_centerVertical="true"
+                    />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/email"
+                    style="@style/matchwrap"
+                    android:layout_toRightOf="@+id/ivEmailIcon"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/edit_text_color"
+                    android:hint="@string/email"
+                    android:background="@null"
+                    android:paddingLeft="@dimen/margin_ten"
+                    android:singleLine="true"
+                    android:padding="@dimen/text_size_ten"
+                    android:text="@={signUpVM.email}"
+                    android:inputType="textEmailAddress"
+                    android:textSize="@dimen/text_size_sixteen"
+                    android:fontFamily="@font/montserrat_semibold"/>
+
+
+                <ImageView
+                    android:id="@+id/ivEmailCheck"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/animated_check"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/margin_ten"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_ten"
+                android:gravity="center_vertical"
+                android:visibility="gone"
+                android:background="@drawable/bg_edit_white_transparent"
+                >
+                <ImageView
+                    android:id="@+id/ivGenderIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/grnder_icon"
+                    android:tint="@color/black"
+                    android:layout_marginLeft="@dimen/margin_ten"
+                    android:layout_centerVertical="true"
+                    />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/gender"
+                    style="@style/matchwrap"
+                    android:layout_toRightOf="@+id/ivGenderIcon"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/edit_text_color"
+                    android:hint="@string/gender"
+                    android:text="@={signUpVM.gender}"
+                    android:background="@null"
+                    android:paddingLeft="@dimen/margin_ten"
+                    android:singleLine="true"
+                    android:padding="@dimen/text_size_twelve"
+                    android:inputType="textEmailAddress"
+                    android:textSize="@dimen/text_size_sixteen"
+                    android:fontFamily="@font/montserrat_semibold"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="@dimen/margin_ten"
+                android:background="@drawable/bg_edit_white_transparent"
+                >
+                <ImageView
+                    android:id="@+id/ivEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/password"
+                    android:tint="@color/black"
+                    android:layout_marginLeft="@dimen/margin_ten"
+                    android:layout_centerVertical="true"
+                    />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/matchwrap"
+                    android:id="@+id/password"
+                    android:layout_toRightOf="@+id/ivEmail"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/edit_text_color"
+                    android:hint="@string/password"
+                    android:textSize="@dimen/text_size_sixteen"
+                    android:text="@={signUpVM.password}"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:background="@null"
+                    android:paddingLeft="@dimen/margin_ten"
+                    android:singleLine="true"
+                    android:padding="@dimen/text_size_ten"
+                    android:inputType="textPassword"/>
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rlConfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_ten"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_edit_white_transparent"
+                >
+                <ImageView
+                    android:id="@+id/ivConfirmPassIcon"                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/password"
+                    android:tint="@color/black"
+                    android:layout_marginLeft="@dimen/margin_ten"
+                    android:layout_centerVertical="true"
+                    />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/confirmPassword"
+                    style="@style/matchwrap"
+                    android:layout_toRightOf="@+id/ivConfirmPassIcon"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/edit_text_color"
+                    android:hint="@string/confirm_password"
+                    android:background="@null"
+                    android:paddingLeft="@dimen/margin_ten"
+                    android:singleLine="true"
+                    android:padding="@dimen/text_size_ten"
+                    android:text="@={signUpVM.confirmPassword}"
+                    android:inputType="textPassword"
+                    android:textSize="@dimen/text_size_sixteen"
+                    android:fontFamily="@font/montserrat_semibold" />
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/loginwithemail"
+                style="@style/matchwrap"
+                android:layout_marginTop="@dimen/margin_fifteen"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:padding="@dimen/text_size_ten"
+                android:onClick="@{(v) -> signUpVM.onClickSingUp()}"
+                android:text="@string/sign_up"
+                android:textSize="@dimen/text_size_sixteen"
+                android:background="@drawable/bg_button_pink"
+                android:fontFamily="@font/montserrat_semibold"/>
+
+            <LinearLayout
+                android:id="@+id/layoutSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:onClick="@{(v) -> signUpVM.onClickSingIn()}"
+                android:layout_marginTop="@dimen/margin_ten">
+                <TextView
+                    android:id="@+id/sighInNow"
+                    style="@style/wrapwrap"
+                    android:gravity="center"
+                    android:text="@string/already_have_an_account"
+                    android:textSize="@dimen/text_size_thirteen"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/montserrat_semibold"
+                    />
+
+                <TextView
+                    android:id="@+id/tvSighIn"
+                    style="@style/wrapwrap"
+                    android:gravity="center"
+                    android:layout_marginLeft="@dimen/margin_four"
+                    android:text="@string/sign_in_now"
+                    android:textSize="@dimen/text_size_thirteen"
+                    android:textColor="@color/yellow"
+                    android:fontFamily="@font/montserrat_semibold"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    </ScrollView>
+
+
+</layout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/margin_twenty">
+
+            <TextView
+               style="@style/wrapwrap"
+                android:text="@string/thanks"
+                android:textSize="@dimen/text_size_sixteen"
+                android:padding="@dimen/margin_ten"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center" />
+
+            <RelativeLayout
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/margin_ten">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivProfile"
+                    style="@style/matchmatch"
+                    android:src="@drawable/profile" />
+
+                <ImageView
+                    style="@style/wrapwrap"
+                    android:src="@drawable/green_camera"
+                    android:layout_alignParentEnd="true"
+                    android:padding="@dimen/margin_five"
+                    android:layout_margin="@dimen/margin_five"
+                    android:layout_alignParentBottom="true"/>
+
+            </RelativeLayout>
+
+            <TextView
+                style="@style/wrapwrap"
+                android:text="@string/your_vote"
+                android:textSize="@dimen/text_size_eighteen"
+                android:padding="@dimen/margin_five"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvusername"
+                style="@style/wrapwrap"
+                android:textSize="@dimen/text_size_sixteen"
+                android:padding="@dimen/margin_five"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

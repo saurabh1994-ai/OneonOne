@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="newChallengesVM"
+            type="com.sws.oneonone.viewModel.NewChallengesVM" />
+    </data>
+    <LinearLayout
+        style="@style/matchmatch"
+        android:id="@+id/root_layout"
+        android:orientation="vertical"
+        android:background="@color/white">
+        <include android:id="@+id/layoutToolbar"
+            layout="@layout/layout_toolbar"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/bg_gray"/>
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll"
+            style="@style/matchmatch"
+            android:fillViewport="true"
+            android:clipToPadding="true"
+            android:fitsSystemWindows="true"
+            android:layout_below="@+id/toolLayout">
+            <RelativeLayout
+                style="@style/matchmatch">
+
+
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    style="@style/matchmatch"
+                    android:layout_below="@+id/llHagtag">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:background="@color/bg_gray">
+
+
+
+                        <LinearLayout
+                            style="@style/matchwrap"
+                            android:background="@color/white"
+                            android:orientation="vertical"
+                            android:onClick="@{(v) -> newChallengesVM.challengersClick()}"
+                            >
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/bg_gray"/>
+
+                            <TextView
+                                style="@style/matchwrap"
+                                android:text="Add Challengers"
+                                android:textSize="@dimen/text_size_sixteen"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:textColor="@color/black"
+                                android:layout_margin="@dimen/margin_ten"
+                                android:drawableRight="@drawable/next_arrow"
+                                android:drawablePadding="@dimen/margin_ten"
+                                android:paddingTop="@dimen/margin_ten"
+                                android:paddingBottom="@dimen/margin_ten"
+                                />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/bg_gray"/>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            style="@style/matchwrap"
+                            android:background="@color/white"
+                            android:orientation="vertical">
+                            <TextView
+                                style="@style/matchwrap"
+                                android:text="Your Challengers"
+                                android:textSize="@dimen/text_size_twelve"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:textColor="@color/gray"
+                                android:paddingLeft="@dimen/margin_ten"
+                                android:paddingRight="@dimen/margin_ten"
+                                android:paddingTop="@dimen/margin_ten"
+                                android:paddingBottom="@dimen/margin_ten"
+                                />
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rvAddChallenges"
+                                android:layout_marginTop="@dimen/margin_ten"
+                                android:layout_marginBottom="@dimen/margin_ten"
+                                android:layout_gravity="center_horizontal"
+                                style="@style/matchwrap" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/bg_gray"
+                            />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:paddingLeft="@dimen/margin_ten"
+                            android:paddingRight="@dimen/margin_ten"
+                            android:gravity="center_vertical"
+                            android:background="@color/white"
+                            >
+                            <TextView
+                                style="@style/wrapmatch"
+                                android:text="@string/open_challenge"
+                                android:textSize="@dimen/text_size_fourteen"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:textColor="@color/black"
+                                android:gravity="center_vertical"
+                                />
+
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/openChallenge"
+                                android:layout_width="wrap_content"
+                                android:layout_gravity="center"
+                                app:showText="false"
+                                android:checked="@{newChallengesVM.openChallenge ? true : false}"
+                                app:track="@drawable/custom_track"
+                                android:thumb="@drawable/custom_thumb"
+                                android:layout_alignParentRight="true"
+                                android:layout_height="match_parent"/>
+
+
+                            <!--
+                                                        <ToggleButton
+                                                            android:id="@+id/toggleOpenChallenge"
+                                                            android:layout_width="60dp"
+                                                            android:layout_height="40dp"
+                                                            android:layout_alignParentRight="true"
+                                                            android:background="@drawable/switch_btn"
+                                                            android:text=""
+                                                            android:textOff=""
+                                                            android:textOn="" />-->
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            style="@style/matchwrap"
+                            android:layout_marginTop="@dimen/margin_eight"
+                            android:padding="@dimen/margin_ten"
+                            android:background="@color/white"
+                            android:orientation="vertical"
+                            >
+
+                            <TextView
+                                style="@style/matchwrap"
+                                android:text="Set Challenge accept time"
+                                android:textSize="@dimen/text_size_twelve"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:textColor="@color/black"
+                                android:paddingTop="@dimen/margin_ten"
+                                android:paddingBottom="@dimen/margin_ten"
+                                />
+
+                            <HorizontalScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scrollbars="none">
+                                <LinearLayout
+                                    style="@style/matchwrap"
+                                    android:layout_marginTop="@dimen/margin_twenty"
+                                    android:orientation="horizontal"
+                                    android:gravity="center_horizontal"
+                                    android:paddingBottom="@dimen/margin_ten">
+
+                                    <TextView
+                                        android:id="@+id/sixhrs"
+                                        android:layout_width="85dp"
+                                        android:layout_height="30dp"
+                                        android:text="6 hours"
+                                        android:gravity="center"
+                                        android:padding="@dimen/margin_five"
+                                        android:textSize="@dimen/text_size_ten"
+                                        android:fontFamily="@font/montserrat_semibold"
+                                        android:textColor="@color/black"
+                                        android:background="@drawable/bg_gray_border_20" />
+
+                                    <TextView
+                                        android:id="@+id/twelvehrs"
+                                        android:layout_width="85dp"
+                                        android:layout_height="30dp"
+                                        android:text="12 hours"
+                                        android:gravity="center"
+                                        android:layout_marginLeft="@dimen/margin_ten"
+                                        android:padding="@dimen/margin_five"
+                                        android:textSize="@dimen/text_size_ten"
+                                        android:fontFamily="@font/montserrat_semibold"
+                                        android:textColor="@color/black"
+                                        android:background="@drawable/bg_gray_border_20"
+                                        />
+
+
+                                    <TextView
+                                        android:id="@+id/eighteenhrs"
+                                        android:layout_width="85dp"
+                                        android:layout_height="30dp"
+                                        android:text="18 hours"
+                                        android:gravity="center"
+                                        android:layout_marginLeft="@dimen/margin_ten"
+                                        android:padding="@dimen/margin_five"
+                                        android:textSize="@dimen/text_size_ten"
+                                        android:fontFamily="@font/montserrat_semibold"
+                                        android:textColor="@color/white"
+                                        android:background="@drawable/bg_red_fill_30"
+                                        />
+
+                                    <TextView
+                                        android:id="@+id/twentyfourhrs"
+                                        android:layout_width="85dp"
+                                        android:layout_height="30dp"
+                                        android:text="24 hours"
+                                        android:gravity="center"
+                                        android:layout_marginLeft="@dimen/margin_ten"
+                                        android:padding="@dimen/margin_five"
+                                        android:textSize="@dimen/text_size_ten"
+                                        android:fontFamily="@font/montserrat_semibold"
+                                        android:textColor="@color/black"
+                                        android:background="@drawable/bg_gray_border_20"
+                                        />
+
+                                </LinearLayout>
+                            </HorizontalScrollView>
+                        </LinearLayout>
+                     <!--   <LinearLayout
+                            style="@style/matchmatch"
+                            android:background="@color/white"
+                            android:layout_marginTop="@dimen/margin_eight"
+                            android:orientation="vertical"
+                            android:paddingBottom="@dimen/margin_twenty"
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Bring More Friends"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/margin_ten"
+                                android:textSize="@dimen/text_size_seventeen"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:textColor="@color/black"
+                                />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Invite Friends To Challenge"
+                                android:gravity="center"
+                                android:layout_marginTop="@dimen/margin_two"
+                                android:textSize="@dimen/text_size_twelve"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:textColor="@color/gray"
+                                />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="@dimen/margin_ten"
+                                android:padding="@dimen/margin_ten"
+                                android:weightSum="4"
+                                >
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    >
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/snap_icon"
+                                        />
+                                    <TextView
+                                        style="@style/matchwrap"
+                                        android:textColor="@color/black"
+                                        android:gravity="center"
+                                        android:padding="@dimen/margin_five"
+                                        android:textSize="@dimen/text_size_twelve"
+                                        android:fontFamily="@font/montserrat_semibold"
+                                        android:text="@string/snapchat"/>
+
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/whatsapp_icon" />
+                                    <TextView
+                                        style="@style/matchwrap"
+                                        android:textColor="@color/black"
+                                        android:gravity="center"
+                                        android:padding="@dimen/margin_five"
+                                        android:textSize="@dimen/text_size_twelve"
+                                        android:fontFamily="@font/montserrat_semibold"
+                                        android:text="@string/whatsapp"/>
+
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    >
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/sms_icon"
+                                        />
+                                    <TextView
+                                        style="@style/matchwrap"
+                                        android:textColor="@color/black"
+                                        android:gravity="center"
+                                        android:padding="@dimen/margin_five"
+                                        android:textSize="@dimen/text_size_twelve"
+                                        android:fontFamily="@font/montserrat_semibold"
+                                        android:text="@string/sms"/>
+
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    >
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_share"
+                                        />
+                                    <TextView
+                                        style="@style/matchwrap"
+                                        android:textColor="@color/black"
+                                        android:gravity="center"
+                                        android:padding="@dimen/margin_five"
+                                        android:textSize="@dimen/text_size_twelve"
+                                        android:fontFamily="@font/montserrat_semibold"
+                                        android:text="@string/share_link"/>
+
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </LinearLayout>-->
+                    </LinearLayout>
+                </LinearLayout>
+                <View
+                    android:id="@+id/hastagView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#80000000"
+                    android:visibility="gone"/>
+
+
+
+
+
+                <LinearLayout
+                    android:id="@+id/llHagtag"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@color/white"
+                    android:padding="@dimen/margin_ten"
+                    android:orientation="horizontal">
+                    <RelativeLayout
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        >
+                        <!--  <RelativeLayout
+                              android:id="@+id/showingVideo"
+                              android:layout_width="match_parent"
+                              android:layout_height="match_parent"
+                              >
+
+  &lt;!&ndash;                            android:visibility="@{newChallengesVM.videoPath.equals(``) ? View.GONE : View.VISIBLE}"&ndash;&gt;
+
+                              <VideoView
+                                  android:id="@+id/challengevideoView"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="match_parent"
+                                  android:layout_alignParentBottom="true"
+                                  android:layout_alignParentEnd="true"
+                                  android:layout_alignParentStart="true"
+                                  android:layout_alignParentTop="true" />
+                              <View
+                                  android:layout_width="match_parent"
+                                  android:layout_height="match_parent"
+                                  android:background="#80000000"
+                                  />
+
+                                  />
+
+                          </RelativeLayout>-->
+
+                        <RelativeLayout
+                            android:id="@+id/showingImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <ImageView
+                                android:id="@+id/challengImage"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop" />
+
+                            <ImageButton
+                                android:id="@+id/playVideo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/video_icon"
+                                android:layout_centerVertical="true"
+                                android:layout_centerHorizontal="true"
+                                android:visibility="gone"
+                                android:background="@null"/>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <EditText
+                            android:id="@+id/etHastag"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_sixteen"
+                            android:padding="@dimen/margin_ten"
+                            android:maxLines="3"
+                            android:background="@android:color/transparent"
+                            android:hint="Write Your Hashtags" />
+
+                        <TextView
+                            android:id="@+id/hashTag"
+                            android:layout_width="85dp"
+                            android:layout_height="30dp"
+                            android:text="@string/hashtag"
+                            android:layout_alignParentBottom="true"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_five"
+                            android:textSize="@dimen/text_size_ten"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:textColor="@color/black"
+                            android:background="@drawable/bg_gray_border"
+                            android:layout_marginStart="@dimen/margin_ten"/>
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvHastag"
+                    style="@style/matchwrap"
+                    android:visibility="gone"
+                    android:background="@color/white"
+                    android:layout_below="@+id/llHagtag"/>
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="ViewExplorerVM"
+            type="com.sws.oneonone.viewModel.ViewExplorerVM" />
+    </data>
+
+
+    <RelativeLayout
+        android:id="@+id/root_layout"
+        style="@style/matchmatch"
+        android:background="@color/black">
+
+
+
+        <RelativeLayout
+            style="@style/matchwrap"
+            android:id="@+id/layoutHeader"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/margin_ten"
+            android:paddingRight="@dimen/margin_ten">
+            <ImageView
+                android:id="@+id/ivClose"
+                style="@style/wrapwrap"
+                android:src="@drawable/back_btn"
+                android:tint="@color/white"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/margin_ten"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvChallenger"
+                android:layout_toRightOf="@+id/ivClose"
+                android:layout_toLeftOf="@+id/ivUpload"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                style="@style/matchwrap" />
+
+            <ImageView
+                android:id="@+id/ivUpload"
+                style="@style/wrapwrap"
+                android:src="@drawable/ic_upload"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/margin_ten"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/llViewExplore"
+            style="@style/wrapwrap"
+            android:layout_marginBottom="60dp"
+            android:gravity="center"
+            android:layout_below="@+id/layoutHeader"
+            android:background="@drawable/bg_gray_rectangle"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+               style="@style/matchmatch"
+                app:cardCornerRadius="@dimen/margin_twenty">
+                <RelativeLayout
+                    style="@style/matchmatch"
+                    android:background="@color/black">
+
+
+
+                    <VideoView
+                        android:id="@+id/video"
+                        style="@style/matchmatch"
+                        android:layout_centerInParent="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true" />
+
+
+                    <ImageView
+                        android:id="@+id/ivViewExplore"
+                        style="@style/matchmatch"
+                        android:scaleType="centerCrop" />
+                    <!--<com.google.android.exoplayer2.ui.PlayerView
+                        android:id="@+id/video"
+                        style="@style/matchmatch"
+                        app:use_controller="false"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:visibility="gone"
+                        android:background="@color/black"/>-->
+
+                <!--    <View
+                        android:id="@+id/overlayView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/overlay_bg" />-->
+
+                    <RelativeLayout
+                        android:id="@+id/rlComment"
+                        android:layout_width="match_parent"
+                        android:layout_height="290dp"
+                        android:orientation="vertical"
+                        android:gravity="bottom"
+                        android:layout_alignParentBottom="true">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="@dimen/margin_five"
+                            android:layout_marginStart="@dimen/margin_ten">
+
+
+
+                           <RelativeLayout
+                           style="@style/matchwrap">
+                               <androidx.recyclerview.widget.RecyclerView
+                                   android:id="@+id/rvComment"
+                                  style="@style/matchwrap"
+                                   android:paddingBottom="65dp"
+                                   android:layout_alignParentBottom="true" />
+
+                               <View
+                                   android:id="@+id/commentView"
+                                  style="@style/matchwrap"
+                                   android:visibility="gone"/>
+
+                         </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:text="@{ViewExplorerVM.hashtag}"
+                                android:layout_marginBottom="35dp"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size_seventeen"
+                                android:fontFamily="@font/montserrat_semibold" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="1"
+                                android:layout_alignParentBottom="true"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/margin_two"
+                                android:gravity="center_vertical"
+                                >
+
+                                <TextView
+                                    android:id="@+id/tvLike"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight=".25"
+                                    android:text="@{ViewExplorerVM.likesCount}"
+                                    android:gravity="center_vertical"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text_size_twelve"
+                                    android:fontFamily="@font/montserrat_semibold"
+                                    />
+
+                                <TextView
+                                    android:id="@+id/tvComment"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight=".35"
+                                    android:text="@{ViewExplorerVM.commentCount}"
+                                    android:gravity="center_vertical"
+                                    android:textColor="@color/white"
+                                    android:paddingLeft="@dimen/margin_five"
+                                    android:textSize="@dimen/text_size_twelve"
+                                    android:fontFamily="@font/montserrat_semibold"
+                                    />
+                                <TextView
+                                    android:id="@+id/tvVotes"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight=".2"
+                                    android:text="@{ViewExplorerVM.votesCount}"
+                                    android:paddingLeft="@dimen/margin_five"
+                                    android:gravity="center_vertical"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text_size_twelve"
+                                    android:fontFamily="@font/montserrat_semibold"
+                                    />
+                                <TextView
+                                    android:id="@+id/tvReport"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight=".2"
+                                    android:text=""
+                                    android:layout_marginRight="@dimen/margin_five"
+                                    android:drawableRight="@drawable/flag_icon"
+                                    android:gravity="center"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text_size_twelve"
+                                    android:fontFamily="@font/montserrat_semibold"
+                                    />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/btnRespondAndVote"
+                                style="@style/wrapwrap"
+                                android:textSize="@dimen/text_size_sixteen"
+                                android:textColor="@color/white"
+                                android:background="@drawable/bg_pink_circle"
+                                android:layout_alignParentRight="true"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginRight="20dp"
+                                android:padding="@dimen/margin_eight"
+                                android:layout_marginBottom="50dp"
+                                android:text="@{ViewExplorerVM.btnText}"
+                                android:visibility="@{ViewExplorerVM.isOpenChallenge ? View.VISIBLE : View.GONE}"
+                                />
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llViews"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/margin_ten"
+                        >
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="@dimen/margin_two"
+                            android:src="@drawable/video_icons"
+                            />
+                        <TextView
+                            android:id="@+id/tvPlay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{ViewExplorerVM.viewCount}"
+                            android:paddingLeft="@dimen/margin_ten"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_seventeen"
+                            android:fontFamily="@font/montserrat_semibold"
+                            />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/timer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:layout_marginTop="30dp"
+                        android:text="@{ViewExplorerVM.timer}"
+                        android:background="@drawable/bg_timer"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/white"
+                        android:lineSpacingMultiplier="1.3"
+                        android:paddingLeft="@dimen/margin_eight"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:textSize="@dimen/text_size_thirteen" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:padding="@dimen/margin_eight"
+            android:layout_marginTop="@dimen/margin_ten"
+            >
+
+            <ImageView
+                android:id="@+id/ivLike"
+                android:src="@drawable/heart_icon"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_five"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/ivLike"
+                android:layout_toLeftOf="@+id/ivSend"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/margin_ten"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textSize="@dimen/text_size_fourteen"
+                android:layout_marginLeft="@dimen/margin_five"
+                android:layout_marginRight="@dimen/margin_five"
+                android:backgroundTint="@color/hint_color"
+                android:textColor="@color/white"
+                android:textColorHint="@color/hint_color"
+                android:hint="@string/enter_comment"
+                android:text="@={ViewExplorerVM.comment}"/>
+
+
+            <ImageView
+                android:id="@+id/ivSend"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/sent_icon"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{(v) -> ViewExplorerVM.onSendClick()}" />
+
+        </RelativeLayout>
+
+        <include layout="@layout/layout_view_explore_cover"
+            android:id="@+id/coverLayout"
+            android:visibility="gone"
+            />
+
+        <ImageView
+            android:id="@+id/ivLikeAnim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleType="center"
+            android:src="@drawable/heart"
+            android:tint="@android:color/holo_red_light"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/ivDisLikeAnim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleType="center"
+            android:src="@drawable/brokenheart"
+            android:tint="@android:color/holo_red_light"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+</layout>

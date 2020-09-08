@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="selectChallengeVM"
+            type="com.sws.oneonone.viewModel.SelectChallengerVM" />
+    </data>
+
+    <LinearLayout
+        style="@style/matchmatch"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <include android:id="@+id/layoutToolbar"
+            layout="@layout/layout_toolbar"/>
+
+        <LinearLayout
+            android:id="@+id/toolLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <RelativeLayout
+                android:id="@+id/toolbar"
+                style="@style/matchwrap"
+                android:padding="@dimen/margin_ten">
+
+                <RelativeLayout
+                    style="@style/matchwrap"
+                    android:layout_toRightOf="@+id/userProfile"
+                    android:background="@drawable/bg_gray_rectangle"
+                    android:layout_marginStart="@dimen/margin_ten"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/margin_ten"
+                    android:layout_toLeftOf="@+id/ivMessage"
+                    android:layout_marginEnd="@dimen/margin_five">
+
+                    <ImageView
+                        android:id="@+id/search_icon"
+                        style="@style/wrapwrap"
+                        android:src="@drawable/search_icon_gray"
+                        android:layout_centerVertical="true"/>
+
+                    <EditText
+                        style="@style/matchwrap"
+                        android:hint="@string/search"
+                        android:inputType="text"
+                        android:textSize="@dimen/text_size_sixteen"
+                        android:gravity="center"
+                        android:onTextChanged="@{selectChallengeVM.onTextChanged}"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:background="@null"
+                        android:layout_toRightOf="@+id/search_icon"
+                        android:layout_marginStart="@dimen/margin_five"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll"
+            style="@style/matchmatch"
+            android:fillViewport="true"
+            android:clipToPadding="true"
+            android:fitsSystemWindows="true"
+            android:layout_below="@+id/toolLayout">
+            <LinearLayout
+                android:orientation="vertical"
+                style="@style/matchmatch">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvAddChallenges"
+                    style="@style/matchwrap" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+</layout>

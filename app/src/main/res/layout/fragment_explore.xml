@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="exploreVM"
+            type="com.sws.oneonone.viewModel.ExploreVM" />
+    </data>
+
+
+    <RelativeLayout
+        style="@style/matchmatch"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/toolLayout"
+            style="@style/matchwrap"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/toolbar"
+                style="@style/matchwrap"
+                android:padding="@dimen/margin_ten">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/userProfile"
+                    android:layout_width="@dimen/user_image_size"
+                    android:layout_height="@dimen/user_image_size"
+                    android:background="@null"
+                    android:src="@drawable/avtar_icon"
+                    android:onClick="@{(v) -> exploreVM.onProfileClick()}"
+                    android:layout_centerVertical="true"/>
+
+
+                <RelativeLayout
+                    style="@style/matchwrap"
+                    android:layout_toRightOf="@+id/userProfile"
+                    android:background="@drawable/bg_gray_rectangle"
+                    android:layout_marginStart="@dimen/margin_ten"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/margin_eight"
+                    android:layout_marginEnd="@dimen/margin_twenty_five">
+
+                    <ImageView
+                        android:id="@+id/search_icon"
+                        style="@style/wrapwrap"
+                        android:src="@drawable/search_icon_gray"
+                        android:layout_centerVertical="true"/>
+
+                    <EditText
+                        android:id="@+id/etExplor"
+                        style="@style/matchwrap"
+                        android:hint="@string/search"
+                        android:inputType="text"
+                        android:textSize="@dimen/text_size_sixteen"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:background="@null"
+                        android:layout_toRightOf="@+id/search_icon"
+                        android:layout_marginStart="@dimen/margin_five"/>
+
+                    <ImageView
+                        style="@style/wrapwrap"
+                        android:minHeight="20dp"
+                        android:onClick="@{(v) -> exploreVM.onAddChallengersClick()}"
+                        android:src="@drawable/invite_friend"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"/>
+
+
+                </RelativeLayout>
+
+                <ImageButton
+                    style="@style/wrapwrap"
+                    android:background="@null"
+                    android:onClick="@{(v) -> exploreVM.onNotificationClick()}"
+                    android:src="@drawable/notification_icon_sel"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"/>
+
+            </RelativeLayout>
+            <View
+                android:id="@+id/topView"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_gray"
+                />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/uploadingProgressBar"
+            style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/pink"
+            android:layout_below="@+id/toolLayout"
+            android:visibility="gone"/>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id = "@+id/swipeRefresh"
+            style="@style/matchmatch"
+            android:layout_below="@+id/toolLayout">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/scroll"
+                style="@style/matchmatch"
+                android:fillViewport="true"
+                android:clipToPadding="true"
+                android:fitsSystemWindows="true">
+                <LinearLayout
+                    android:orientation="vertical"
+                    style="@style/matchmatch">
+
+                    <TextView
+                        style="@style/matchwrap"
+                        android:textColor="@color/pink"
+                        android:textSize="@dimen/text_size_seventeen"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:text="@string/your_challengers"
+                        android:layout_marginStart="@dimen/margin_five"
+                        android:layout_marginTop="@dimen/margin_five"
+                        android:layout_marginBottom="@dimen/margin_five"/>
+
+
+                    <androidx.core.widget.NestedScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_five"
+                            android:layout_marginTop="@dimen/margin_five"
+                            android:layout_marginBottom="@dimen/margin_five">
+
+                            <RelativeLayout
+                                style="@style/wrapwrap">
+                                <LinearLayout
+                                    android:id="@+id/llMyChallenge"
+                                    style="@style/wrapwrap"
+                                    android:orientation="vertical"
+                                    android:gravity="center"
+                                    android:visibility="gone">
+
+                                    <de.hdodenhof.circleimageview.CircleImageView
+                                        android:id="@+id/ivPic"
+                                        android:layout_width="65dp"
+                                        android:layout_height="65dp"
+                                        android:src="@drawable/profile"
+                                        android:background="@drawable/image_border"
+                                        android:padding="@dimen/margin_one"
+                                        app:civ_border_width="1dp"
+                                        app:civ_border_color="@color/white"
+                                        android:layout_gravity="center_horizontal"/>
+
+                                    <TextView
+                                        android:id="@+id/myUsername"
+                                        style="@style/wrapwrap"
+                                        android:singleLine="true"
+                                        android:paddingLeft="@dimen/margin_one"
+                                        android:paddingBottom="@dimen/margin_one"
+                                        android:textSize="@dimen/text_size_ten"
+                                        android:textColor="@color/black"
+                                        android:fontFamily="@font/montserrat_semibold"
+                                        android:text="@string/your_challenges"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/llAddChallenge"
+                                    android:orientation="vertical"
+                                    style="@style/wrapwrap"
+                                    android:layout_gravity="center_vertical">
+
+                                    <RelativeLayout
+                                        android:id="@+id/shape_layout"
+                                        android:layout_width="65dp"
+                                        android:layout_height="65dp"
+                                        android:layout_gravity="center_horizontal">
+
+
+                                        <de.hdodenhof.circleimageview.CircleImageView
+                                            android:id="@+id/ivAdd"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:src="@drawable/profile"
+                                            app:civ_border_width="0dp"
+                                            app:civ_border_color="@color/pink"/>
+
+                                        <ImageView
+                                            android:id="@+id/ivPlusIcon"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:src="@drawable/add_icon"
+                                            android:layout_alignParentBottom="true"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_margin="@dimen/margin_three" />
+
+                                    </RelativeLayout>
+
+                                    <TextView
+                                        android:id="@+id/username"
+                                        style="@style/wrapwrap"
+                                        android:text="@string/your_challenges"
+                                        android:textSize="@dimen/text_size_ten"
+                                        android:textColor="@color/black"
+                                        android:singleLine="true"
+                                        android:fontFamily="@font/montserrat_semibold" />
+
+                                </LinearLayout>
+                            </RelativeLayout>
+
+
+
+
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rvChallenges"
+                                android:nestedScrollingEnabled="false"
+                                style="@style/matchwrap" />
+
+                        </LinearLayout>
+
+                    </androidx.core.widget.NestedScrollView>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin_ten"
+                        android:background="@color/light_gray"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/margin_ten"
+                        android:paddingRight="@dimen/margin_ten"
+                        android:weightSum="2"
+                        >
+                        <LinearLayout
+                            android:id="@+id/BtnAllChallenges"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginRight="@dimen/margin_eight"
+                            android:orientation="vertical"
+                            >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_eight"
+                            android:textColor="@{exploreVM.IsOpenChallenge ? @color/gray : @color/pink}"
+                            android:textSize="@dimen/text_size_seventeen"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="@string/all_challenges"/>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1.5dp"
+                                android:background="@{exploreVM.IsOpenChallenge ? @color/gray : @color/pink}"
+                                />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/BtnOpenChallenges"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="@dimen/margin_eight"
+                            android:orientation="vertical"
+                            >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_eight"
+                            android:textColor="@{exploreVM.IsOpenChallenge ? @color/pink : @color/gray}"
+                            android:textSize="@dimen/text_size_seventeen"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="@string/open_challenges"/>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1.5dp"
+                                android:background="@{exploreVM.IsOpenChallenge ? @color/pink : @color/gray}"
+                                />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvexplore"
+                        android:padding=".5dp"
+                        android:layout_marginTop="@dimen/margin_five"
+                        style="@style/matchwrap" />
+
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+
+
+
+    </RelativeLayout>
+</layout>
+
+
+

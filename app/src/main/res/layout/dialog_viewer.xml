@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        style="@style/matchmatch"
+        app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+        <RelativeLayout
+            android:id="@+id/root_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black">
+
+
+            <LinearLayout
+                android:id="@+id/llshow"
+                style="@style/matchmatch"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    style="@style/matchmatch"
+                    app:cardCornerRadius="20dp">
+
+                    <RelativeLayout
+
+                        style="@style/matchmatch"
+                        android:background="@color/black">
+
+                        <ImageView
+                            android:id="@+id/ivView"
+                            android:background="@color/black"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            style="@style/matchmatch"
+                            android:scaleType="centerCrop" />
+
+
+                        <VideoView
+                            android:id="@+id/video"
+                            style="@style/matchmatch"
+                            android:layout_centerInParent="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:visibility="gone"
+                            android:background="@color/transparent"
+                            android:layout_alignParentBottom="true" />
+
+                        <com.google.android.exoplayer2.ui.PlayerView
+                            android:id="@+id/videoUrl"
+                            style="@style/matchmatch"
+                            app:use_controller="false"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:visibility="gone"
+                            android:background="@color/black"/>
+
+
+                        <ImageView
+                            style="@style/matchmatch"
+                            android:id="@+id/ivThumbNail"
+                            android:scaleType="centerCrop"
+                            android:adjustViewBounds="true"
+                            android:visibility="gone"/>
+
+
+
+
+                    </RelativeLayout>
+
+
+
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/ivClose"
+                android:src="@drawable/cross_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_ten"
+                android:padding="@dimen/margin_ten"/>
+
+
+        </RelativeLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</layout>
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+      style="@style/matchmatch"
+        android:background="@color/black"
+        app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+        <RelativeLayout
+            android:id="@+id/root_layout"
+            style="@style/matchmatch"
+            android:background="@android:color/transparent">
+            <androidx.cardview.widget.CardView
+                style="@style/matchmatch"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                app:cardCornerRadius="@dimen/margin_twenty">
+                <RelativeLayout
+                    style="@style/matchmatch"
+                    android:background="@color/black"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginBottom="80dp">
+
+                    <ImageView
+                        android:id="@+id/ivView"
+
+                        android:background="@color/black"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        style="@style/matchmatch"
+                        android:scaleType="centerCrop" />
+
+                    <com.google.android.exoplayer2.ui.PlayerView
+                        android:id="@+id/video"
+                        style="@style/matchmatch"
+                        app:use_controller="false"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:visibility="gone"/>
+                    <VideoView
+                        android:id="@+id/video1"
+                        style="@style/matchmatch"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:visibility="gone"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/ivClose"
+                android:src="@drawable/cross_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_ten"
+                android:padding="@dimen/margin_ten"/>
+
+        </RelativeLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>-->

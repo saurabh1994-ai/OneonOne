@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_chat"
+        android:checked="true"
+        android:icon="@drawable/chat"
+        android:title="@string/chat"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_camera"
+        android:checked="false"
+        android:icon="@drawable/camera"
+        android:title="@string/camera"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_explore"
+        android:checked="false"
+        android:icon="@drawable/explore"
+        android:title="@string/explore"
+        app:showAsAction="ifRoom" />
+
+</menu>

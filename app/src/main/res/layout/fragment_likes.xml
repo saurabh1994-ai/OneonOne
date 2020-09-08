@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        style="@style/matchmatch"
+        android:orientation="vertical">
+        <include android:id="@+id/layoutToolbar"
+            layout="@layout/layout_toolbar"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/bg_gray"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLikes"
+            style="@style/matchwrap"
+            />
+    </LinearLayout>
+
+
+</layout>

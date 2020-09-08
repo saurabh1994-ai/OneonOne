@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="toolbarModel"
+            type="com.sws.oneonone.model.ToolbarModel" />
+
+        <variable
+            name="toolbarVM"
+            type="com.sws.oneonone.viewModel.ToolbarVM" />
+    </data>
+
+    <LinearLayout
+        style="@style/matchwrap"
+        android:background="@{toolbarModel.bgColor == 0 ? @drawable/bg_toolbar : @drawable/bg_toolbar_white}">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/matchwrap">
+
+            <RelativeLayout
+                style="@style/matchmatch">
+
+
+                <ImageButton
+                    android:id="@+id/profile_icon"
+                    style="@style/wrapwrap"
+                    android:src="@drawable/profile"
+                    android:background="@null"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/margin_eight"
+                    android:layout_marginLeft="@dimen/margin_ten"
+                    android:visibility="@{toolbarModel.isProfile}"/>
+
+
+
+                <TextView
+                    android:id="@+id/tvtotal"
+                    style="@style/wrapwrap"
+                    android:textColor="@color/pink"
+                    android:textSize="@dimen/text_size_seventeen"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@{toolbarModel.count}"
+                    android:visibility="@{toolbarModel.isShowCount}"
+                    android:layout_toStartOf="@+id/title"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:id="@+id/title"
+                    style="@style/wrapwrap"
+                    android:textColor="@{toolbarModel.bgColor == 0 ? @color/white : @color/black}"
+                    android:textSize="@dimen/text_size_seventeen"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:layout_centerInParent="true"
+                    android:text="@{toolbarModel.title}"
+                    android:visibility="@{toolbarModel.isTitle}"
+                    android:layout_marginEnd="@dimen/margin_ten"/>
+
+
+                <ImageButton
+                    android:id="@+id/search"
+                    style="@style/wrapwrap"
+                    android:background="@null"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/margin_fifteen"
+                    android:src="@drawable/search_icon"
+                    android:layout_toStartOf="@+id/notification"
+                    android:visibility="@{toolbarModel.isSearch}"/>
+
+
+
+                <ImageButton
+                    android:id="@+id/notification"
+                    style="@style/wrapwrap"
+                    android:background="@null"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="@dimen/margin_ten"
+                    android:src="@drawable/notification_icon"
+                    android:visibility="@{toolbarModel.isNoti}"/>
+
+
+                <TextView
+                    android:id="@+id/tvAction"
+                    style="@style/wrapwrap"
+                    android:textColor="@color/pink"
+                    android:textSize="@dimen/text_size_seventeen"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:onClick="@{(v) -> toolbarVM.onClickText()}"
+                    android:text="@{toolbarModel.actionTitle}"
+                    android:padding="@dimen/margin_ten"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:visibility='@{toolbarModel.actionTitle.equals("") ? View.GONE : View.VISIBLE }'/>
+
+
+                <TextView
+                    android:id="@+id/tvback"
+                    style="@style/wrapwrap"
+                    android:layout_centerVertical="true"
+                    android:drawableLeft="@drawable/back_btn"
+                    android:drawablePadding="@dimen/margin_five"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:onClick="@{(v) -> toolbarVM.onBackClick()}"
+                    android:padding="@dimen/margin_ten"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_seventeen"
+                    android:visibility="@{toolbarModel.isBack}" />
+
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </LinearLayout>
+</layout>

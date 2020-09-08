@@ -1,0 +1,159 @@
+<resources>
+    <string name="app_name">1On1</string>
+    <string name="facebook_app_id">919880575091108</string>
+    <string name="fb_login_protocol_scheme">fb919880575091108</string>
+
+    <string name="login">LOGIN</string>
+    <string name="login_with_email">Login with Email</string>
+    <string name="login_with_instagram">Login with Instagram</string>
+    <string name="login_with_snapchat">Login with Snapchat</string>
+    <string name="login_with_facebook">Login with Facebook</string>
+    <string name="email">Email</string>
+    <string name="gender">Gender</string>
+    <string name="password">Password</string>
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
+    <string name="send_password">SEND PASSWORD</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="forgot_password"><u>Forgot Password?</u></string>
+    <string name="dont_have_an_account">Don\'t have an account?</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="sign_up_now"><u>SIGN UP NOW</u></string>
+    <string name="sign_in_now"><u>SIGN IN NOW</u></string>
+    <string name="signup"><u>Sign up</u></string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="full_name">Name</string>
+    <string name="email_or_username">Email Or Username</string>
+    <string name="username">Username</string>
+    <string name="back_to_sign_in"><u>Back to Sign in</u></string>
+    <string name="forgot_password_caps">FORGOT PASSWORD?</string>
+    <string name="forgot_password_hint">It\'s Simply Enter your Username/Email below and
+        reset password link will be sent to you via email. You can follow that link and select a new password.</string>
+    <string name="submit">Submit</string>
+    <string name="followers">Followers</string>
+    <string name="wins">Wins</string>
+    <string name="challenges">Challenges</string>
+    <string name="more_option">More Option</string>
+    <string name="public_challenges">PUBLIC CHALLENGES</string>
+    <string name="my_challenges">My Challenges</string>
+    <string name="accepted">Accepted</string>
+    <string name="accept">Accept</string>
+   <string name="old_challenges">OLD CHALLENGES</string>
+    <string name="follow">Follow</string>
+    <string name="following">Following</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="settings">Settings</string>
+    <string name="notifications">Notifications</string>
+    <string name="change_password">Change Password</string>
+    <string name="more">MORE</string>
+    <string name="general">GENERAL</string>
+    <string name="invite_friends">Invite Friends</string>
+    <string name="about_us">About us</string>
+    <string name="contact_us">Contact us</string>
+    <string name="logout">Logout</string>
+    <string name="update">Update</string>
+    <string name="chat">Chat</string>
+    <string name="explore">Explore</string>
+    <string name="camera">Camera</string>
+    <string name="search">Search</string>
+    <string name="message_write_here">Message write here</string>
+    <string name="your_challenge">Your Challengers</string>
+    <string name="your_challenges">Your Challenge</string>
+    <string name="bring_more_friends">Bring More Friends</string>
+    <string name="invite_friend_to_chalange">Invite Friends to Chalange</string>
+    <string name="tik_tok_video">TikTok Video</string>
+    <string name="snapchat_video">Snapchat Video</string>
+    <string name="make_a_snapchat_video">Make a Snapchat photo/video</string>
+    <string name="make_a_tiktok_video_one_on_one_app">Make a TikTok photo/video #1on1app</string>
+    <string name="upload_your_saved_tiktok_video">Upload your saved Tiktok photo/video</string>
+    <string name="upload_your_saved_snapchat_video">Upload your saved Snapchat photo/video</string>
+    <string name="snapchat">SnapChat</string>
+    <string name="record_upload_video">Record/Upload Video</string>
+    <string name="whatsapp">Whatsapp</string>
+    <string name="sms">SMS</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="decline">Decline</string>
+    <string name="discard">Discard</string>
+    <string name="keep">Keep</string>
+    <string name="enter_comment">Enter Comment</string>
+    <string name="enter_your_group_name">Enter Your Group name</string>
+    <string name="share_link">Share Link</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="your_challengers">Your Challengers</string>
+    <string name="do_you_realy_want_decline">Do you really want to decline this challenge</string>
+    <string name="congrats_your_challenge_accepted">Congats your challenge has been accepted!</string>
+    <string name="are_you_sure_you_want_todiscard">Are you sure you want to discard your challenge?</string>
+    <string name="you_can_challenge_up_to_4">You can challenge up to 4 of your friends</string>
+    <string name="you_challengers_have_24h">You challengers have 24h to accept or decline your challenge</string>
+    <string name="create_new_challenge">Create new challenge</string>
+    <string name="responce_time_expired">Response time expired</string>
+    <string name="congrats_your_challenge">Congrats your challenge has been sent to your friens!</string>
+
+    <string name="single_tap_is_it_to_skip_video">Single tap is it to \nskip to the next\nvideo</string>
+    <string name="double_tap_to">Double tap to</string>
+    <string name="vote">Vote</string>
+
+    <string name="all_challenges">All Challenges</string>
+    <string name="open_challenges">Open Challenges</string>
+    <string name="open_challenge">Open Challenge</string>
+    <string name="hashtag">@Hashtag</string>
+
+    <string-array name="profile_tab">
+        <item>@string/my_challenges</item>
+        <item>@string/accepted</item>
+    </string-array>
+
+<!--    More option UI-->
+    <string name="private_account">Private Account</string>
+    <string name="chat_with_us">Contact us</string>
+    <string name="share_profile">Share Profile</string>
+    <string name="push_notifications">Push Notifications</string>
+    <string name="privacy_and_safety">Privacy and Saffety</string>
+    <string name="help_center">Help Center</string>
+    <string name="terms_of_use">Terms of Use</string>
+
+
+    <string name="receive_push_notifications">Receive push notifications</string>
+
+    <string name="privacy_text">Only people you approve from now on can your challenges or challenge you.</string>
+
+    <string name="thanks">THANKS</string>
+    <string name="your_vote">Your Vote!</string>
+    <string name="alert">Alert</string>
+    <string name="likes">Likes</string>
+    <string name="hour_ago"> hour ago</string>
+    <string name="minutes_ago"> min ago</string>
+    <string name="day_ago"> days ago</string>
+    <string name="days_ago">days ago</string>
+    <string name="ago">ago</string>
+    <string name="agos">agos</string>
+    <string name="month_ago"> month ago</string>
+    <string name="votes">Votes</string>
+    <string name="views">Views</string>
+    <string name="video_length_validation">Video should be of minimum 3 seconds</string>
+    <string name="congrats_mesaage">Congrats your challenge has been accepted!</string>
+    <string name="won_message">Congratulation!!\nYou won the challenge</string>
+    <string name="loose_challenge">Sorry!\n you loose the challenge</string>
+    <string name="you_loose_challenge">Sorry! \n you denied this challenge</string>
+    <string name="check_challenge">you can\'t create your new challenge as your old challenge is active now"</string>
+    <string name="report">Report</string>
+    <string name="why_are_you_reporting_this_post">Why are you reporting this post?</string>
+    <string name="spam">It\'s a Spam</string>
+    <string name="appropriate">It\'s appropriate</string>
+    <string name="edit">Edit</string>
+
+    <string name="user_display_name">Display name</string>
+    <string name="user_external_id">External ID</string>
+    <string name="user_avatar_holding_text">Avatar profile image</string>
+    <string name="logout_button">Unlink account</string>
+    <string name="not_logged_in">User is not logged in</string>
+    <string name="user_profile_title">My Profile</string>
+    <string name="no_challenge_yet">No Challenge Yet</string>
+    <string name="oops">Oops!</string>
+    <string name="shared_image_transition">shared_image_transition_%1$d</string>
+    <string name="share_this_challenge_with_your_friends">Share this challenge with your friends</string>
+
+
+
+</resources>

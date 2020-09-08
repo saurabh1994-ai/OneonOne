@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        style="@style/matchmatch"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/bg_white_rectangle_20">
+
+
+        <TextView
+                style="@style/matchwrap"
+                android:textSize="@dimen/text_size_seventeen"
+                android:textColor="@color/purple"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center"
+                android:text="@string/alert"
+                android:padding="@dimen/margin_eight" />
+            <TextView
+                android:id="@+id/tvMessage"
+                style="@style/matchwrap"
+                android:textSize="@dimen/text_size_fourteen"
+                android:textColor="@color/black"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/margin_eight"
+                android:layout_marginEnd="@dimen/margin_eight" />
+
+
+        <TextView
+            android:id="@+id/okBtn"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="@string/ok"
+            android:textSize="@dimen/text_size_sixteen"
+            android:padding="@dimen/margin_ten"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/margin_fifteen"
+            android:layout_marginBottom="@dimen/margin_fifteen"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="center_horizontal"
+            android:background="@drawable/bg_button_red"
+            android:layout_marginStart="@dimen/margin_twenty"
+            android:layout_marginEnd="@dimen/margin_twenty"/>
+    </LinearLayout>
+</layout>

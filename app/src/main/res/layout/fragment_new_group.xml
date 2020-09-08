@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--    <data>
+            <variable
+                name="newChatGroupVM"
+                type="com.sws.oneonone.viewModel.NewGroupNameVM" />
+        </data>-->
+
+    <LinearLayout
+        style="@style/matchmatch"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <include android:id="@+id/layout_toolbar"
+            layout="@layout/layout_toolbar"/>
+
+        <View
+            android:id="@+id/topView"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/bg_gray"
+            />
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll"
+            style="@style/matchmatch"
+            android:fillViewport="true"
+            android:clipToPadding="true"
+            android:fitsSystemWindows="true"
+            >
+            <LinearLayout
+                android:orientation="vertical"
+                style="@style/matchmatch"
+                android:paddingLeft="@dimen/margin_eight"
+                android:paddingRight="@dimen/margin_eight"
+                >
+
+
+                <RelativeLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/margin_twenty">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivGroupImage"
+                        style="@style/matchmatch"
+                        android:src="@drawable/profile" />
+
+                    <ImageView
+                        android:id="@+id/ivSelectImage"
+                        style="@style/wrapwrap"
+                        android:src="@drawable/green_camera"
+                        android:layout_alignParentEnd="true"
+                        android:padding="@dimen/margin_three"
+                        android:layout_alignParentBottom="true"/>
+
+                </RelativeLayout>
+                <LinearLayout
+                    android:id="@+id/toolLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_ten"
+                    >
+                    <TextView
+                        android:id="@+id/text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:text="Name your new chat"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_sixteen"
+                        android:fontFamily="@font/montserrat_semibold"
+                        />
+
+
+                    <!--                    android:text="@={newChatGroupVM.groupName}"-->
+                    <EditText
+                        android:id="@+id/etGroupName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/ivLike"
+                        android:layout_toLeftOf="@+id/ivSend"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="@dimen/margin_eight"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:textSize="@dimen/text_size_fourteen"
+                        android:backgroundTint="@color/new_group_hint_color"
+                        android:textColor="@color/new_group_text_color"
+                        android:textColorHint="@color/new_group_hint_color"
+                        android:hint="@string/enter_your_group_name"
+                        />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvParticipet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:text=""
+                    android:layout_margin="@dimen/margin_fifteen"
+                    android:textColor="@color/new_group_hint_color"
+                    android:textSize="@dimen/text_size_sixteen"
+                    android:fontFamily="@font/montserrat_semibold"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvNewChat"
+                    style="@style/matchwrap"
+                    />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+</layout>

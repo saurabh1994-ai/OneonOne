@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:orientation="vertical"
+        style="@style/matchmatch"
+        android:background="@color/light_gray">
+        <include
+            android:id="@+id/layout_toolbar"
+            layout="@layout/layout_toolbar"/>
+
+        <TextView
+            android:id="@+id/edit_profile"
+            style="@style/matchwrap"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_sixteen"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@string/edit_profile"
+            android:paddingTop="@dimen/margin_twenty"
+            android:paddingBottom="@dimen/margin_twenty"
+            android:paddingStart="@dimen/margin_fifteen"
+            android:paddingEnd="@dimen/margin_fifteen"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray" />
+
+        <RelativeLayout
+            style="@style/matchwrap">
+
+            <TextView
+                style="@style/wrapwrap"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_sixteen"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="@string/notifications"
+                android:layout_marginTop="@dimen/margin_twenty"
+                android:layout_marginBottom="@dimen/margin_twenty"
+                android:layout_marginStart="@dimen/margin_fifteen"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/margin_fifteen"/>
+
+        </RelativeLayout>
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray" />
+
+        <TextView
+            style="@style/matchwrap"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_sixteen"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@string/change_password"
+            android:paddingTop="@dimen/margin_twenty"
+            android:paddingBottom="@dimen/margin_twenty"
+            android:paddingStart="@dimen/margin_fifteen"
+            android:paddingEnd="@dimen/margin_fifteen"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray" />
+
+        <TextView
+            style="@style/wrapwrap"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_twelve"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@string/more"
+            android:layout_marginTop="@dimen/margin_fifteen"
+            android:layout_marginBottom="@dimen/margin_fifteen"
+            android:layout_marginStart="@dimen/margin_fifteen"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray" />
+
+        <TextView
+            style="@style/matchwrap"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_sixteen"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@string/invite_friends"
+            android:paddingTop="@dimen/margin_twenty"
+            android:paddingBottom="@dimen/margin_twenty"
+            android:paddingStart="@dimen/margin_fifteen"
+            android:paddingEnd="@dimen/margin_fifteen"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray" />
+
+        <TextView
+            style="@style/matchwrap"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_sixteen"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@string/about_us"
+            android:paddingTop="@dimen/margin_twenty"
+            android:paddingBottom="@dimen/margin_twenty"
+            android:paddingStart="@dimen/margin_fifteen"
+            android:paddingEnd="@dimen/margin_fifteen"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray" />
+
+        <TextView
+            style="@style/matchwrap"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_sixteen"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@string/contact_us"
+            android:paddingTop="@dimen/margin_twenty"
+            android:paddingBottom="@dimen/margin_twenty"
+            android:paddingStart="@dimen/margin_fifteen"
+            android:paddingEnd="@dimen/margin_fifteen"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray" />
+
+        <TextView
+            style="@style/matchwrap"
+            android:textColor="@color/pink"
+            android:textSize="@dimen/text_size_sixteen"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@string/logout"
+            android:paddingTop="@dimen/margin_twenty"
+            android:paddingBottom="@dimen/margin_twenty"
+            android:paddingStart="@dimen/margin_fifteen"
+            android:paddingEnd="@dimen/margin_fifteen"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray" />
+
+    </LinearLayout>
+
+</layout>

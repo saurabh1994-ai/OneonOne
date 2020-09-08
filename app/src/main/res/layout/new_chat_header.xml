@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="chatHeader"
+            type="com.sws.oneonone.model.SignUpResultModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/tvHeader"
+            style="@style/matchwrap"
+            android:layout_marginLeft="@dimen/margin_five"
+            android:padding="@dimen/margin_ten"
+            android:textAllCaps="true"
+            android:visibility="gone"
+            android:textSize="@dimen/text_size_sixteen"
+            android:textColor="@color/pink"
+            android:fontFamily="@font/montserrat_semibold"
+            android:layout_centerHorizontal="true"
+            />
+        <LinearLayout
+            android:id="@+id/userRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <RelativeLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:padding="@dimen/margin_ten"
+                android:gravity="center_vertical"
+                >
+
+                <LinearLayout
+                    android:id="@+id/layout"
+                    style="@style/wrapwrap"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/myCardView"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        app:cardCornerRadius="35dp"
+                        android:layout_centerInParent="true">
+
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/profile_image"
+                            style="@style/matchmatch"
+                            android:background="@drawable/image_border"
+                            android:padding="@dimen/margin_three"
+                            android:src="@drawable/profile"
+                            app:civ_border_width="0dp"
+                            app:civ_border_color="@color/pink"/>
+
+                    </androidx.cardview.widget.CardView>
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/margin_ten"
+                        >
+
+                        <TextView
+                            android:id="@+id/username"
+                            style="@style/wrapwrap"
+                            android:text="@{chatHeader.fullName}"
+                            android:textSize="@dimen/text_size_fourteen"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:layout_centerHorizontal="true"
+                            />
+
+                        <TextView
+                            android:id="@+id/tv_types"
+                            style="@style/wrapwrap"
+                            android:text="@{chatHeader.username}"
+                            android:textSize="@dimen/text_size_twelve"
+                            android:drawablePadding="@dimen/margin_ten"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:layout_marginTop="@dimen/margin_two"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <CheckBox
+                    android:id="@+id/cb_action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="gone"
+                    android:checked="@{chatHeader.getIsSelected()}"
+                    android:button="@drawable/checkbox_bg"
+                    android:padding="@dimen/margin_ten"
+                    />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

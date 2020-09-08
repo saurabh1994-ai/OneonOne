@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="signUpModel"
+            type="com.sws.oneonone.model.SignUpModel" />
+
+        <variable
+            name="editProfileVM"
+            type="com.sws.oneonone.viewModel.EditProfileVM" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        style="@style/matchmatch"
+        android:background="@color/light_gray">
+        <include
+            android:id="@+id/layout_toolbar"
+            layout="@layout/layout_toolbar"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+
+
+
+                <RelativeLayout
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/margin_twenty">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivProfile"
+                        style="@style/matchmatch"
+                        android:src="@drawable/profile" />
+
+                    <ImageView
+                        style="@style/wrapwrap"
+                        android:src="@drawable/green_camera"
+                        android:layout_alignParentEnd="true"
+                        android:padding="@dimen/margin_five"
+                        android:onClick="@{(v) -> editProfileVM.onOpenCameraClick()}"
+                        android:layout_margin="@dimen/margin_five"
+                        android:layout_alignParentBottom="true"/>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_ten"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:background="@drawable/bg_edit_white_transparent"
+                        >
+                        <ImageView
+                            android:id="@+id/ivFullName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/user_icon"
+                            android:tint="@color/black"
+                            android:layout_marginLeft="@dimen/margin_ten"
+                            android:layout_centerVertical="true"
+                            />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/ivFullName"
+                            app:passwordToggleEnabled="false"
+                            android:padding="@dimen/margin_five"
+                            android:layout_marginLeft="@dimen/margin_ten"
+                            >
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/fullName"
+                                style="@style/matchwrap"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/edit_text_color"
+                                android:hint="@string/full_name"
+                                android:text="@={editProfileVM.fullName}"
+                                android:background="@null"
+                                android:padding="@dimen/margin_ten"
+                                android:singleLine="true"
+                                android:inputType="textEmailAddress"
+                                android:textSize="@dimen/text_size_sixteen"
+                                android:fontFamily="@font/montserrat_semibold"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="@dimen/margin_ten"
+                        android:background="@drawable/bg_edit_white_transparent"
+                        >
+                        <ImageView
+                            android:id="@+id/ivUserIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/user_icon"
+                            android:tint="@color/black"
+                            android:layout_marginLeft="@dimen/margin_ten"
+                            android:layout_centerVertical="true"
+                            />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/ivUserIcon"
+                            app:passwordToggleEnabled="false"
+                            android:padding="@dimen/margin_five"
+                            android:layout_marginLeft="@dimen/margin_ten"
+                            >
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/userName"
+                                style="@style/matchwrap"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/edit_text_color"
+                                android:hint="@string/username"
+                                android:text="@={editProfileVM.userName}"
+                                android:background="@null"
+                                android:padding="@dimen/margin_ten"
+                                android:singleLine="true"
+                                android:inputType="textEmailAddress"
+                                android:textSize="@dimen/text_size_sixteen"
+                                android:fontFamily="@font/montserrat_semibold"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="@dimen/margin_ten"
+                        android:background="@drawable/bg_edit_white_transparent"
+                        >
+                        <ImageView
+                            android:id="@+id/ivEmailIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/emai"
+                            android:tint="@color/black"
+                            android:layout_marginLeft="@dimen/margin_ten"
+                            android:layout_centerVertical="true"
+                            />
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/ivEmailIcon"
+                            app:passwordToggleEnabled="false"
+                            android:padding="@dimen/margin_five"
+                            android:layout_marginLeft="@dimen/margin_ten"
+                            >
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/email"
+                                style="@style/matchwrap"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/edit_text_color"
+                                android:hint="@string/email"
+                                android:text="@={editProfileVM.email}"
+                                android:background="@null"
+                                android:singleLine="true"
+                                android:padding="@dimen/margin_ten"
+                                android:inputType="textEmailAddress"
+                                android:textSize="@dimen/text_size_sixteen"
+                                android:fontFamily="@font/montserrat_semibold"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </RelativeLayout>
+
+                   <!-- <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_ten"
+                        android:gravity="center_vertical"
+                        android:background="@drawable/bg_edit_white_transparent"
+                        >
+                        <ImageView
+                            android:id="@+id/ivGenderIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/grnder_icon"
+                            android:tint="@color/black"
+                            android:layout_marginLeft="@dimen/margin_ten"
+                            android:layout_centerVertical="true"
+                            />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/ivGenderIcon"
+                            app:passwordToggleEnabled="false"
+                            android:padding="@dimen/margin_five"
+                            android:layout_marginLeft="@dimen/margin_ten"
+                            >
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/gender"
+                                style="@style/matchwrap"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/edit_text_color"
+                                android:hint="@string/gender"
+                                android:text="@={editProfileVM.gender}"
+                                android:background="@null"
+                                android:singleLine="true"
+                                android:padding="@dimen/text_size_ten"
+                                android:inputType="textEmailAddress"
+                                android:textSize="@dimen/text_size_sixteen"
+                                android:fontFamily="@font/montserrat_semibold"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </RelativeLayout>-->
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_ten"
+                    >
+                    <Button
+                        android:id="@+id/loginwithemail"
+                        style="@style/matchwrap"
+                        android:textColor="@color/white"
+                        android:text="@string/update"
+                        android:padding="@dimen/margin_twenty"
+                        android:textSize="@dimen/text_size_sixteen"
+                        android:onClick="@{(v) -> editProfileVM.onUpdateClick()}"
+                        android:background="@drawable/bg_button_pink"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:layout_marginTop="@dimen/margin_ten"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+</layout>

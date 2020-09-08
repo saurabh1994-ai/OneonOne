@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "902028571670",
+    "firebase_url": "https://on1chat.firebaseio.com",
+    "project_id": "on1chat",
+    "storage_bucket": "on1chat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:902028571670:android:7dafd7e5aac3c97185b137",
+        "android_client_info": {
+          "package_name": "com.sws.oneonone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "902028571670-qfega57sloinvp7mt9k1d9ms0p0dj44d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9jGhlMrC7cW2wQwTrf9Z8KmLqIA-wWI4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "902028571670-qfega57sloinvp7mt9k1d9ms0p0dj44d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "902028571670-jkj8rtekmhqvm9nas1rq503vhnr775oh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.sws.1on1"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

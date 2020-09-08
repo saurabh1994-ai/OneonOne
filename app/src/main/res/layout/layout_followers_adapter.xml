@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <ImageView
+            android:id="@+id/userImage"
+            style="@style/wrapwrap"
+            android:src="@drawable/user_image"
+            android:background="@null"
+            android:layout_centerVertical="true"
+            android:paddingStart="@dimen/margin_ten" />
+
+        <TextView
+            style="@style/wrapwrap"
+            android:text="williamdoe2544"
+            android:textSize="@dimen/text_size_fifteen"
+            android:textColor="@color/black"
+            android:fontFamily="@font/montserrat_regular"
+            android:layout_toRightOf="@+id/userImage"
+            android:layout_marginStart="@dimen/margin_fifteen"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/tvfollow"
+            style="@style/wrapwrap"
+            android:text="@string/follow"
+            android:textSize="@dimen/text_size_fifteen"
+            android:textColor="@color/pink"
+            android:fontFamily="@font/montserrat_regular"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/bg_pink_border"
+            android:paddingTop="@dimen/margin_five"
+            android:paddingBottom="@dimen/margin_five"
+            android:paddingStart="@dimen/margin_fifteen"
+            android:paddingEnd="@dimen/margin_fifteen"
+            android:drawableStart="@drawable/plus"
+            android:drawablePadding="@dimen/margin_five"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/margin_ten"/>
+
+        <TextView
+            android:id="@+id/tvfollowing"
+            style="@style/wrapwrap"
+            android:text="@string/following"
+            android:textSize="@dimen/text_size_fifteen"
+            android:textColor="@color/pink"
+            android:fontFamily="@font/montserrat_regular"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone"
+            android:paddingTop="@dimen/margin_five"
+            android:paddingBottom="@dimen/margin_five"
+            android:paddingStart="@dimen/margin_fifteen"
+            android:paddingEnd="@dimen/margin_ten"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/margin_ten"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/margin_twenty"/>
+
+
+    </RelativeLayout>
+
+</layout>

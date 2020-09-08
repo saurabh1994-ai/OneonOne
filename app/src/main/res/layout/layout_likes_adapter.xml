@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="UserDataModel"
+            type="com.sws.oneonone.model.UserDataModel" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:padding="@dimen/margin_two"
+            android:gravity="center_vertical"
+            android:layout_margin="@dimen/margin_ten">
+
+            <LinearLayout
+                android:id="@+id/layout"
+                style="@style/wrapwrap"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/myCardView"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:cardCornerRadius="35dp"
+                    android:layout_centerInParent="true">
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/ciView"
+                        style="@style/matchmatch"
+                        android:background="@drawable/image_border"
+                        android:padding="@dimen/margin_three"
+                        android:src="@drawable/profile"
+                        app:civ_border_width="0dp"
+                        app:civ_border_color="@color/pink"/>
+
+                </androidx.cardview.widget.CardView>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/margin_ten">
+
+                    <TextView
+                        android:id="@+id/username"
+                        style="@style/wrapwrap"
+                        android:singleLine="true"
+                        android:text="@{UserDataModel.username}"
+                        android:textSize="@dimen/text_size_sixteen"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:layout_centerHorizontal="true" />
+
+                    <TextView
+                        android:id="@+id/tvusername"
+                        style="@style/wrapwrap"
+                        android:text="@{UserDataModel.name}"
+                        android:textSize="@dimen/text_size_fourteen"
+                        android:drawablePadding="@dimen/margin_ten"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:layout_marginTop="@dimen/margin_two"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvtime"
+                style="@style/wrapwrap"
+                android:text="@{UserDataModel.createdAt}"
+                android:textSize="@dimen/text_size_fourteen"
+                android:drawablePadding="@dimen/margin_ten"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:fontFamily="@font/montserrat_regular"
+                android:layout_marginTop="@dimen/margin_two"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:visibility="gone"/>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

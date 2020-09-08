@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="profileChallenge"
+            type="com.sws.oneonone.model.ProfileChallengeResult" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        app:cardCornerRadius="7dp"
+        app:cardElevation="4dp"
+      android:layout_margin="@dimen/margin_five">
+
+        <RelativeLayout
+            style="@style/matchmatch">
+
+            <ImageView
+                android:id="@+id/CardImage"
+                style="@style/matchmatch"
+                android:scaleType="centerCrop" />
+
+            <View
+                style="@style/matchmatch"
+                android:background="@drawable/page_bottom_bg"/>
+
+            <TextView
+                android:id="@+id/timer"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:visibility="visible"
+                android:background="@drawable/bg_timer_top"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/margin_ten"
+                android:textColor="@color/white"
+                android:lineSpacingMultiplier="1.3"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textSize="@dimen/text_size_thirteen" />
+
+
+            <TextView
+                style="@style/wrapwrap"
+                android:text=" O "
+                android:textSize="@dimen/text_size_sixteen"
+                android:textColor="@color/white"
+                android:background="@drawable/bg_pink_circle"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/montserrat_semibold"
+                android:layout_alignParentBottom="true"
+                android:padding="@dimen/margin_two"
+                android:visibility="@{profileChallenge.isOpenChallenge ? View.VISIBLE : View.GONE}"
+                android:layout_margin="@dimen/margin_ten"/>
+
+
+            <RelativeLayout
+                android:id="@+id/shape_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_ten"
+                >
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/profileImage"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/profile"
+                        app:civ_border_width="1dp"
+                        app:civ_border_color="@color/profile_border_color"
+                        />
+
+            </RelativeLayout>
+
+
+            <TextView
+                style="@style/wrapwrap"
+                android:textSize="@dimen/text_size_fifteen"
+                android:textColor="@color/white"
+                android:singleLine="true"
+                android:text="@{profileChallenge.title}"
+                android:layout_margin="@dimen/margin_ten"
+                android:layout_alignParentBottom="true"
+                android:fontFamily="@font/montserrat_semibold"
+                android:layout_above="@+id/username"
+                android:layout_marginStart="@dimen/margin_eight"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</layout>

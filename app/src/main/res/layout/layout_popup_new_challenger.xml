@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#80000000">
+
+    <LinearLayout
+        android:layout_width="@dimen/popup_width"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_white_rectangle_20"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <LinearLayout
+            style="@style/matchmatch"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_ten">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_ten"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    >
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/profileImage1"
+                        android:layout_height="70dp"
+                        android:layout_width="70dp"
+                        android:padding="@dimen/margin_one"
+                        android:layout_marginLeft="@dimen/margin_ten"
+                        android:layout_marginRight="@dimen/margin_ten"
+                        android:background="@drawable/image_border"
+                        android:src="@drawable/profile_1"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="@color/white"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_ten"
+                    android:layout_marginRight="@dimen/margin_ten"
+                    android:gravity="center"
+                    >
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/profileImage2"
+                        android:layout_height="70dp"
+                        android:layout_width="70dp"
+                        android:padding="@dimen/margin_one"
+                        android:background="@drawable/image_border"
+                        android:src="@drawable/profile_2"
+                        app:civ_border_width="2dp"
+                        android:layout_marginTop="@dimen/margin_fifteen"
+                        app:civ_border_color="@color/white"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    >
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/profileImage3"
+                        android:layout_height="70dp"
+                        android:layout_width="70dp"
+                        android:padding="@dimen/margin_one"
+                        android:layout_marginLeft="@dimen/margin_ten"
+                        android:layout_marginRight="@dimen/margin_ten"
+                        android:background="@drawable/image_border"
+                        android:src="@drawable/profile_3"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="@color/white"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/congrats_your_challenge"
+                android:textSize="@dimen/text_size_sixteen"
+                android:paddingTop="@dimen/margin_fifteen"
+                android:paddingBottom="@dimen/margin_fifteen"
+                android:layout_marginTop="@dimen/margin_ten"
+                android:textColor="@color/black"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:id="@+id/btnChange"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:text="@string/create_new_challenge"
+                android:textSize="@dimen/text_size_sixteen"
+                android:padding="@dimen/margin_fifteen"
+                android:textColor="@color/white"
+                android:layout_marginTop="@dimen/margin_twenty"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/bg_red_fill_30"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center_horizontal"
+                />
+
+            <TextView
+                android:id="@+id/btnExplore"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:text="@string/explore"
+                android:textSize="@dimen/text_size_sixteen"
+                android:padding="@dimen/margin_fifteen"
+                android:textColor="@color/white"
+                android:background="@drawable/bg_purple_fill_30"
+                android:layout_marginBottom="@dimen/margin_fifteen"
+                android:layout_marginTop="@dimen/margin_twenty"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center_horizontal"
+                />
+
+            <LinearLayout
+                style="@style/matchmatch"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/margin_eight"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/margin_twenty">
+               <!-- <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bring More Friends"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/margin_ten"
+                    android:textSize="@dimen/text_size_seventeen"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:textColor="@color/black"
+                    />-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/share_this_challenge_with_your_friends"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/margin_two"
+                    android:textSize="@dimen/text_size_twelve"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:textColor="@color/gray"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/margin_ten"
+                    android:weightSum="4">
+                    <LinearLayout
+                        android:id="@+id/llSnapchat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/snap_icon" />
+                        <TextView
+                            style="@style/matchwrap"
+                            android:textColor="@color/black"
+                            android:gravity="center"
+                           android:paddingTop="@dimen/margin_five"
+                            android:textSize="@dimen/text_size_twelve"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="@string/snapchat"/>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/llWatsupp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/whatsapp_icon" />
+                        <TextView
+                            style="@style/matchwrap"
+                            android:textColor="@color/black"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/margin_five"
+                            android:textSize="@dimen/text_size_twelve"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="@string/whatsapp"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llSms"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/sms_icon"
+                            />
+                        <TextView
+                            style="@style/matchwrap"
+                            android:textColor="@color/black"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/margin_five"
+                            android:textSize="@dimen/text_size_twelve"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="@string/sms"/>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/llShareLink"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_share" />
+                        <TextView
+                            style="@style/matchwrap"
+                            android:textColor="@color/black"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/margin_five"
+                            android:textSize="@dimen/text_size_twelve"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="@string/share_link"/>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

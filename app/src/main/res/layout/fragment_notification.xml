@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+ <!--   <data>
+        <variable
+            name="notificationVM"
+            type="com.sws.oneonone.viewModel.NotificationVM" />
+    </data>-->
+    <LinearLayout
+        style="@style/matchmatch"
+        android:id="@+id/root_layout"
+        android:orientation="vertical"
+        android:background="@color/white"
+        >
+        <include android:id="@+id/layoutToolbar"
+            layout="@layout/layout_toolbar"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/bg_gray"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvNotification"
+            style="@style/matchwrap"
+            />
+    </LinearLayout>
+
+</layout>

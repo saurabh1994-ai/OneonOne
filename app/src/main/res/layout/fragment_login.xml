@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="loginVM"
+            type="com.sws.oneonone.viewModel.LoginVM" />
+    </data>
+    <RelativeLayout
+        style="@style/matchmatch"
+        android:background="@drawable/login_bg"
+        android:paddingLeft="@dimen/margin_ten"
+        android:paddingRight="@dimen/margin_ten"
+        android:paddingBottom="@dimen/margin_ten">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            style="@style/wrapwrap"
+            android:onClick="@{(v) -> loginVM.onBackClick()}"
+            android:src="@drawable/back_btn"
+            android:padding="@dimen/margin_ten" />
+        <LinearLayout
+            style="@style/wrapwrap"
+            android:orientation="vertical"
+            android:layout_below="@+id/btnBack"
+            android:padding="10dp">
+            <ImageView
+                style="@style/wrapwrap"
+                android:src="@drawable/icon_app" />
+            <ImageView
+                style="@style/wrapwrap"
+                android:layout_marginTop="@dimen/margin_ten"
+                android:src="@drawable/text" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/matchwrap"
+            android:orientation="vertical"
+            android:layout_marginBottom="@dimen/margin_twenty"
+            android:padding="@dimen/margin_ten"
+            android:layout_alignParentBottom="true">
+            <RelativeLayout
+               style="@style/matchwrap"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_edit_white_transparent">
+                <ImageView
+                    android:id="@+id/ivEmailIcon"
+                    style="@style/wrapwrap"
+                    android:src="@drawable/emai"
+                    android:tint="@color/black"
+                    android:layout_marginLeft="@dimen/margin_ten"
+                    android:layout_centerVertical="true" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/email"
+                    style="@style/matchwrap"
+                    android:layout_toRightOf="@+id/ivEmailIcon"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/edit_text_color"
+                    android:hint="@string/email_or_username"
+                    android:background="@null"
+                    android:paddingLeft="@dimen/margin_ten"
+                    android:singleLine="true"
+                    android:padding="@dimen/text_size_ten"
+                    android:text="@={loginVM.userName}"
+                    android:inputType="textEmailAddress"
+                    android:textSize="@dimen/text_size_sixteen"
+                    android:fontFamily="@font/montserrat_semibold"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="@dimen/margin_ten"
+                android:background="@drawable/bg_edit_white_transparent"
+                >
+                <ImageView
+                    android:id="@+id/ivEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/password"
+                    android:tint="@color/black"
+                    android:layout_marginLeft="@dimen/margin_ten"
+                    android:layout_centerVertical="true"
+                    />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/matchwrap"
+                    android:id="@+id/password"
+                    android:layout_toRightOf="@+id/ivEmail"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/edit_text_color"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:textSize="@dimen/text_size_sixteen"
+                    android:text="@={loginVM.password}"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:background="@null"
+                    android:paddingLeft="@dimen/margin_ten"
+                    android:singleLine="true"
+                    android:padding="@dimen/text_size_ten"/>
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/loginwithemail"
+                style="@style/matchwrap"
+                android:layout_marginTop="@dimen/margin_fifteen"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:padding="@dimen/text_size_ten"
+                android:text="@string/login"
+                android:onClick="@{(v) -> loginVM.onClickLogin()}"
+                android:textSize="@dimen/text_size_sixteen"
+                android:background="@drawable/bg_button_pink"
+                android:fontFamily="@font/montserrat_semibold"/>
+
+            <TextView
+                android:id="@+id/forgot_password"
+                style="@style/wrapwrap"
+                android:text="@string/forgot_password"
+                android:textSize="@dimen/text_size_fourteen"
+                android:onClick="@{(v) -> loginVM.onClickForgotPassword()}"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat_semibold"
+                android:paddingTop="@dimen/margin_ten"
+                android:paddingBottom="@dimen/margin_ten"/>
+
+            <LinearLayout
+               style="@style/matchwrap"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:onClick="@{(v) -> loginVM.onClickSingIn()}"
+                android:padding="@dimen/margin_ten">
+            <TextView
+                android:id="@+id/sighInNow"
+                style="@style/wrapwrap"
+                android:gravity="center"
+                android:text="@string/dont_have_an_account"
+                android:textSize="@dimen/text_size_thirteen"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat_semibold" />
+
+            <TextView
+                android:id="@+id/sighInNow2"
+                style="@style/wrapwrap"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/margin_four"
+                android:text="@string/sign_up_now"
+                android:textSize="@dimen/text_size_thirteen"
+                android:textColor="@color/yellow"
+                android:fontFamily="@font/montserrat_semibold" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            style="@style/matchwrap"
+            android:visibility="gone"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bg_white_rectangle"
+            android:padding="@dimen/margin_ten">
+
+
+            <RelativeLayout
+                style="@style/matchwrap">
+
+
+                <TextView
+                    android:id="@+id/signup"
+                    style="@style/wrapwrap"
+                    android:text="@string/signup"
+                    android:textSize="@dimen/text_size_fifteen"
+                    android:textColor="@color/black"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:padding="@dimen/margin_ten"/>
+
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

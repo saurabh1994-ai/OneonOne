@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_my_challengers"
+        android:checked="true"
+        android:icon="@drawable/profile_tab_one"
+        app:showAsAction="ifRoom"
+        tools:ignore="MenuTitle" />
+    <item
+        android:id="@+id/action_all_challengers"
+        android:checked="false"
+        android:icon="@drawable/profile_tab_two"
+        tools:ignore="MenuTitle"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_won_challengers"
+        android:checked="false"
+        android:icon="@drawable/profile_tab_three"
+
+        app:showAsAction="ifRoom"
+        tools:ignore="MenuTitle" />
+
+</menu>

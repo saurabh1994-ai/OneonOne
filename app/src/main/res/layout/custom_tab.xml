@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ttf="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+
+    <TextView
+        android:id="@+id/tabText"
+        style="@style/wrapwrap"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_fifteen"
+        android:fontFamily="@font/montserrat_semibold" />
+
+    <View
+        android:layout_width="180dp"
+        android:layout_height="1dp"/>
+</LinearLayout>

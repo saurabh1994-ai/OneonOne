@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="chatUserVM"
+            type="com.sws.oneonone.viewModel.ChatUserVM" />
+    </data>
+    <RelativeLayout
+        style="@style/matchmatch"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/toolLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <RelativeLayout
+                android:id="@+id/toolbar"
+                style="@style/matchwrap"
+                android:padding="@dimen/margin_ten">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/userProfile"
+                    android:layout_width="@dimen/user_image_size"
+                    android:layout_height="@dimen/user_image_size"
+                    android:background="@null"
+                    android:src="@drawable/avtar_icon"
+                    android:onClick="@{(v) -> chatUserVM.onClickProfile()}"
+                    android:layout_centerVertical="true"/>
+
+
+                <RelativeLayout
+                    style="@style/matchwrap"
+                    android:layout_toRightOf="@+id/userProfile"
+                    android:background="@drawable/bg_gray_rectangle"
+                    android:layout_marginStart="@dimen/margin_ten"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/margin_eight"
+                    android:layout_toLeftOf="@+id/ivMessage"
+                    android:layout_marginEnd="@dimen/margin_five">
+
+                    <ImageView
+                        android:id="@+id/search_icon"
+                        style="@style/wrapwrap"
+                        android:src="@drawable/search_icon_gray"
+                        android:layout_centerVertical="true"/>
+
+                    <EditText
+                        style="@style/matchwrap"
+                        android:hint="@string/search"
+                        android:inputType="text"
+                        android:onTextChanged="@{chatUserVM.onTextChanged}"
+                        android:textSize="@dimen/text_size_sixteen"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:background="@null"
+                        android:layout_toRightOf="@+id/search_icon"
+                        android:layout_marginStart="@dimen/margin_five"/>
+
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/ivMessage"
+                    style="@style/wrapwrap"
+                    android:src="@drawable/chat_icon"
+                    android:onClick="@{(v) -> chatUserVM.onClickNewChat()}"
+                    android:padding="@dimen/margin_ten"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"/>
+
+            </RelativeLayout>
+            <View
+                android:id="@+id/topView"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_gray"
+                />
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll"
+            style="@style/matchmatch"
+            android:fillViewport="true"
+            android:clipToPadding="true"
+            android:fitsSystemWindows="true"
+            android:layout_below="@+id/toolLayout">
+            <RelativeLayout
+                style="@style/matchmatch">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvChallenges"
+                    style="@style/matchwrap"
+                    android:paddingBottom="60dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tvEmptyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="Chat with new user"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:textColor="@color/gray"
+                    android:onClick="@{(v) -> chatUserVM.onClickNewChat()}"
+                    android:padding="@dimen/margin_ten"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:textSize="@dimen/text_size_eighteen"
+                    android:drawableRight="@drawable/add_red_icon"
+                    android:drawablePadding="@dimen/margin_ten"
+                    />
+
+
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            />
+    </RelativeLayout>
+</layout>

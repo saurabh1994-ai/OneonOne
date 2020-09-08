@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#605f5f</color>
+
+    <color name="pink">#f01f5d</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="timer_pink">#DC00D3</color>
+    <color name="light_pink">#ce11d5</color>
+    <color name="yellow">#f9f200</color>
+    <color name="gray">#929292</color>
+    <color name="purple">#A400FF</color>
+    <color name="purple_text_color">#8f47ff</color>
+    <color name="matterhorn">#4B4B4B</color>
+
+    <color name="edit_text_color">#605f5f</color>
+    <color name="light_gray">#f6f6f8</color>
+    <color name="profile_line_space">#f88fae</color>
+    <color name="bg_gray">#EEEDF2</color>
+    <color name="chat_gray">#E2E2E2</color>
+<!--    <color name="bg_gray">#EBEAF3</color>-->
+    <color name="colorPrimaryReallyDark">#131B1F</color>
+    <color name="hashtag_color">#262626</color>
+    <color name="profile_border_color">#d1d2d9</color>
+    <color name="color_group">#4D000000</color>
+    
+    
+
+
+    <color name="purple_500">#9C27B0</color>
+    <color name="deep_purple_500">#673AB7</color>
+    <color name="indigo_500">#3F51B5</color>
+    <color name="blue_500">#2196F3</color>
+    <color name="cyan_500">#00BCD4</color>
+    <color name="light_blue_500">#03A9F4</color>\
+
+    <color name="color1">#9C009C</color>
+    <color name="color2">#FE9900</color>
+
+
+    <color name="profile_bg_color">#f01f5d</color>
+    <color name="profile_status_bar_color">#f0205e</color>
+    <color name="profile_header_devider_color">#e20f4e</color>
+    <color name="profile_icon_saperate_line_color">#f88fae</color>
+
+
+    <!--    Challengers UI design-->
+    <color name="hint_color">#545454</color>
+
+
+    <!--    Create new Group UI-->
+    <color name="new_group_hint_color">#cbccd3</color>
+    <color name="new_group_text_color">#262626</color>
+
+    <!--    Water Challenge UI-->
+    <color name="decline_text_color">#b9b9b9</color>
+
+
+    <color name="color_gray_alpha">#65b7b7b7</color>
+    <color name="app_blue">#0e1f2f</color>
+    <color name="text_color">#000000</color>
+    <color name="seekbar_color">#3be3e3</color>
+
+    <color name="line_color">#FF15FF00</color>
+    <color name="shadow_color">#00000000</color>
+    <color name="black_alpha_87">#de000000</color>
+</resources>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        style="@style/matchmatch"
+        android:background="@color/pink"
+        android:padding="@dimen/margin_ten">
+
+        <ImageView
+            style="@style/wrapwrap"
+            android:background="@drawable/icon_app"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="150dp"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            style="@style/matchwrap"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bg_white_rectangle"
+            android:padding="@dimen/margin_ten">
+
+            <RelativeLayout
+                style="@style/matchwrap">
+                <TextView
+                    style="@style/wrapwrap"
+                    android:text="@string/login"
+                    android:textSize="@dimen/text_size_sixteen"
+                    android:textColor="@color/pink"
+                    android:fontFamily="@font/montserrat_semibold"/>
+
+                <ImageButton
+                    style="@style/wrapwrap"
+                    android:src="@drawable/close_icons"
+                    android:background="@null"
+                    android:layout_alignParentEnd="true"/>
+
+            </RelativeLayout>
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email"
+                style="@style/matchwrap"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:textSize="@dimen/text_size_sixteen"
+                android:layout_marginTop="@dimen/margin_ten"
+                android:fontFamily="@font/montserrat_regular"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                style="@style/matchwrap"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:textSize="@dimen/text_size_sixteen"
+                android:layout_marginTop="@dimen/margin_six"
+                android:fontFamily="@font/montserrat_regular"/>
+
+
+            <Button
+                android:id="@+id/loginwithemail"
+                style="@style/matchwrap"
+                android:layout_marginTop="@dimen/margin_ten"
+                android:textColor="@color/white"
+                android:text="@string/login"
+                android:textSize="@dimen/text_size_sixteen"
+                android:background="@drawable/bg_button_pink"
+                android:fontFamily="@font/montserrat_semibold"/>
+
+            <RelativeLayout
+                style="@style/matchwrap">
+                <TextView
+                    android:id="@+id/forgot_password"
+                    style="@style/wrapwrap"
+                    android:text="@string/forgot_password"
+                    android:textSize="@dimen/text_size_fifteen"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:padding="@dimen/margin_ten"/>
+
+                <TextView
+                    android:id="@+id/signup"
+                    style="@style/wrapwrap"
+                    android:text="@string/signup"
+                    android:textSize="@dimen/text_size_fifteen"
+                    android:textColor="@color/black"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:padding="@dimen/margin_ten"/>
+
+
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="chatUserModel"
+            type="com.sws.oneonone.firebaseModel.ChatUserModel" />
+    </data>
+    <RelativeLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:id="@+id/layoutYourMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="80dp"
+            android:visibility="gone"
+            android:layout_marginBottom="@dimen/margin_ten"
+            android:orientation="horizontal"
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_img"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/image_border"
+                android:padding="@dimen/margin_three"
+                android:src="@drawable/profile_img1"
+                app:civ_border_width="0dp"
+                app:civ_border_color="@color/pink"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/margin_ten"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/your_message"
+
+                        >
+                        <TextView
+                            android:id="@+id/tvUserName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:visibility='@{chatUserModel.getIsGroup() ? View.VISIBLE : View.GONE }'
+                            android:layout_alignParentRight="true"
+                            android:textSize="@dimen/text_size_ten"
+                            android:textColor="@color/purple"
+                            android:fontFamily="@font/montserrat_semibold"
+                            />
+                        <TextView
+                            android:id="@+id/tv_your_msg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{chatUserModel.getMessage()}"
+                            android:padding="10dp"
+                            android:visibility='@{chatUserModel.getMessage().equals("") ? View.GONE : View.VISIBLE }'
+                            android:layout_alignParentRight="true"
+                            android:textSize="@dimen/text_size_fourteen"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/montserrat_semibold"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+                <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                    android:id="@+id/chatImage"
+                    android:layout_width="250dp"
+                    android:layout_height="160dp"
+                    android:layout_alignParentRight="true"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/margin_five"
+                    app:siShape="@drawable/chat_image_shape2"
+                    android:src="@drawable/teaser_image"
+                    app:siSquare="true"/>
+<!--                android:visibility='@{chatUserModel.getImage().equals("") ? View.GONE : View.VISIBLE}'-->
+
+
+                <RelativeLayout
+                    android:id="@+id/layoutVideo"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/margin_five"
+                    android:layout_alignParentRight="true"
+                    >
+<!--                    android:visibility='@{chatUserModel.getVideo().equals("") ? View.GONE : View.VISIBLE }'-->
+
+                    <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                        android:id="@+id/videoThumbNail"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:scaleType="centerCrop"
+                        app:siShape="@drawable/chat_image_shape2"
+                        android:src="@drawable/teaser_image"
+                        app:siSquare="true"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_white_play"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layoutMyMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:visibility="gone"
+            android:layout_marginBottom="@dimen/margin_ten"
+            android:orientation="vertical"
+            android:layout_alignParentRight="true"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <TextView
+                    android:id="@+id/tv_my_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{chatUserModel.getMessage()}"
+                    android:padding="10dp"
+                    android:visibility='@{chatUserModel.getMessage().equals("") ? View.GONE : View.VISIBLE}'
+                    android:layout_alignParentRight="true"
+                    android:textSize="@dimen/text_size_fourteen"
+                    android:textColor="@color/white"
+                    android:background="@drawable/my_message"
+                    android:fontFamily="@font/montserrat_semibold"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <!--                <com.github.siyamed.shapeimageview.mask.PorterShapeImageView-->
+                <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                    android:id="@+id/chatImage2"
+                    android:layout_width="250dp"
+                    android:layout_height="160dp"
+                    android:layout_alignParentRight="true"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/margin_eight"
+                    app:siShape="@drawable/chat_image_shape"
+                    android:src="@drawable/teaser_image"
+                    app:siSquare="true"/>
+<!--                android:visibility='@{chatUserModel.getImage().equals("") ? View.GONE : View.VISIBLE }'-->
+
+
+                />
+
+                <RelativeLayout
+                    android:id="@+id/layoutVideoMe"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/margin_eight"
+                    android:layout_alignParentRight="true"
+                    >
+                    <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                        android:id="@+id/myVideoThumbNail"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:scaleType="centerCrop"
+                        app:siShape="@drawable/chat_image_shape"
+                        android:src="@drawable/teaser_image"
+                        app:siSquare="true"
+                        />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_white_play"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        />
+                </RelativeLayout>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <TextView
+                    android:id="@+id/my_msg_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:drawableLeft="@drawable/opend_chat"
+                    android:drawablePadding="@dimen/margin_five"
+                    android:padding="@dimen/margin_five"
+                    android:layout_alignParentRight="true"
+                    android:textSize="@dimen/text_size_eight"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/montserrat_regular"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        style="@style/matchwrap"
+        android:id="@+id/root_layout"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:minHeight="350dp">
+
+        <LinearLayout
+            style="@style/matchwrap"
+            android:orientation="vertical"
+            >
+            <TextView
+                style="@style/matchwrap"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_seventeen"
+                android:padding="@dimen/margin_eight"
+                android:layout_marginLeft="@dimen/margin_five"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="@string/tik_tok_video"/>
+            <LinearLayout
+                style="@style/matchwrap"
+                android:background="@drawable/bg_gray"
+                android:layout_marginLeft="@dimen/margin_ten"
+                android:layout_marginRight="@dimen/margin_ten"
+                android:padding="@dimen/margin_twenty"
+                android:orientation="vertical"
+                >
+                <TextView
+                    style="@style/matchwrap"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_thirteen"
+                    android:gravity="center"
+                    android:drawableLeft="@drawable/tiktok_icon"
+                    android:drawablePadding="@dimen/margin_ten"
+                    android:paddingTop="@dimen/margin_ten"
+                    android:paddingBottom="@dimen/margin_ten"
+                    android:paddingRight="@dimen/margin_ten"
+                    android:paddingLeft="@dimen/margin_twenty"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/make_a_tiktok_video_one_on_one_app"
+                    android:background="@drawable/bg_button_black"
+                    />
+
+                <TextView
+                    android:id="@+id/tiktokGallery"
+                    style="@style/matchwrap"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_thirteen"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/margin_ten"
+                    android:drawableLeft="@drawable/tiktok_icon"
+                    android:drawablePadding="@dimen/margin_ten"
+                    android:paddingTop="@dimen/margin_ten"
+                    android:paddingBottom="@dimen/margin_ten"
+                    android:paddingRight="@dimen/margin_ten"
+                    android:paddingLeft="@dimen/margin_twenty"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/upload_your_saved_tiktok_video"
+                    android:background="@drawable/bg_button_black"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/matchwrap"
+            android:orientation="vertical"
+            >
+            <TextView
+                style="@style/matchwrap"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_seventeen"
+                android:padding="@dimen/margin_eight"
+                android:layout_marginLeft="@dimen/margin_five"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="@string/snapchat_video"/>
+
+            <LinearLayout
+                style="@style/matchwrap"
+                android:background="@drawable/bg_gray"
+                android:layout_marginLeft="@dimen/margin_ten"
+                android:layout_marginRight="@dimen/margin_ten"
+                android:padding="@dimen/margin_twenty"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:id="@+id/tvSnapchat"
+                    style="@style/matchwrap"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_thirteen"
+                    android:gravity="center"
+                    android:drawableLeft="@drawable/snapchat_icon"
+                    android:drawablePadding="@dimen/margin_ten"
+                    android:paddingTop="@dimen/margin_ten"
+                    android:paddingBottom="@dimen/margin_ten"
+                    android:paddingRight="@dimen/margin_ten"
+                    android:paddingLeft="@dimen/margin_twenty"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/make_a_snapchat_video"
+                    android:background="@drawable/bg_button_yellow"
+                    />
+
+                <TextView
+                    android:id="@+id/snapChatVideos"
+                    style="@style/matchwrap"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_thirteen"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/margin_ten"
+                    android:drawableLeft="@drawable/snapchat_icon"
+                    android:drawablePadding="@dimen/margin_ten"
+                    android:paddingTop="@dimen/margin_ten"
+                    android:paddingBottom="@dimen/margin_ten"
+                    android:paddingRight="@dimen/margin_ten"
+                    android:paddingLeft="@dimen/margin_twenty"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/upload_your_saved_snapchat_video"
+                    android:background="@drawable/bg_button_yellow"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/matchwrap"
+            android:orientation="vertical"
+            android:minHeight="120dp"
+            >
+            <RelativeLayout
+                android:id="@+id/rlCamera"
+                style="@style/matchwrap"
+                android:gravity="center"
+                android:paddingTop="@dimen/margin_ten"
+                android:paddingBottom="@dimen/margin_fifteen"
+                android:paddingLeft="@dimen/margin_twenty_five"
+                android:paddingRight="@dimen/margin_twenty_five"
+                android:layout_marginTop="@dimen/margin_fifteen"
+                android:layout_marginBottom="@dimen/margin_fifteen">
+
+                <RelativeLayout
+                    android:id="@+id/openCamera"
+                    style="@style/matchwrap"
+                    android:gravity="center"
+                    android:background="@drawable/bg_button_red"
+                    >
+                    <TextView
+                        style="@style/wrapwrap"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_thirteen"
+                        android:gravity="center"
+                        android:drawableLeft="@drawable/ic_camera"
+                        android:drawablePadding="@dimen/margin_ten"
+                        android:padding="@dimen/margin_ten"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:text="@string/record_upload_video" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

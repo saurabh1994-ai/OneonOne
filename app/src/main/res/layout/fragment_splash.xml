@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        style="@style/matchmatch"
+        android:background="@drawable/login_bg"
+        >
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/btnBack"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            >
+            <ImageView
+                style="@style/wrapwrap"
+                android:background="@drawable/icon_app"
+                />
+            <ImageView
+                style="@style/wrapwrap"
+                android:layout_marginTop="@dimen/margin_ten"
+                android:visibility="gone"
+                android:background="@drawable/text"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

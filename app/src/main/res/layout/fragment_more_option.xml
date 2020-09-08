@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="moreVM"
+            type="com.sws.oneonone.viewModel.MoreOptionVM" />
+    </data>
+
+    <LinearLayout
+        style="@style/matchmatch"
+        android:orientation="vertical"
+        android:background="@color/white"
+        >
+
+        <include
+            android:id="@+id/layout_toolbar"
+            layout="@layout/layout_toolbar"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <View
+                    android:id="@+id/topView"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/bg_gray"
+                    />
+
+                <RelativeLayout
+                    style="@style/matchwrap"
+                    android:padding="@dimen/text_size_twelve"
+                    android:gravity="center_vertical"
+                    >
+                    <ImageView
+                        android:id="@+id/ic_privacy"
+                        style="@style/wrapwrap"
+                        android:background="@drawable/privacy_icon"
+                        />
+                    <TextView
+                        style="@style/wrapwrap"
+                        android:text="@string/private_account"
+                        android:textSize="@dimen/text_size_fourteen"
+                        android:textColor="@color/black"
+                        android:padding="@dimen/margin_ten"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/ic_privacy"
+                        android:fontFamily="@font/montserrat_semibold"/>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/privateAccountOn"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        app:showText="false"
+                        android:checked="false"
+                        android:layout_centerVertical="true"
+                        app:track="@drawable/custom_track"
+                        android:thumb="@drawable/custom_thumb"
+                        android:layout_alignParentRight="true"
+                        android:layout_height="wrap_content"/>
+
+                </RelativeLayout>
+                <TextView
+                    style="@style/wrapwrap"
+                    android:text="@string/privacy_text"
+                    android:textSize="@dimen/text_size_twelve"
+                    android:textColor="@color/black"
+                    android:paddingLeft="@dimen/text_size_twelve"
+                    android:fontFamily="@font/montserrat_light"
+                    android:layout_gravity="center_horizontal" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/text_size_twelve"
+                    android:background="@color/bg_gray"
+                    />
+
+                <RelativeLayout
+                    android:layout_marginTop="@dimen/text_size_twelve"
+                    style="@style/matchwrap"
+                    android:padding="@dimen/text_size_twelve"
+                    android:gravity=""
+                    >
+                    <ImageView
+                        android:id="@+id/ic_push_notification"
+                        style="@style/wrapwrap"
+                        android:background="@drawable/notification_more_icon"
+                        />
+                    <TextView
+                        style="@style/wrapwrap"
+                        android:text="@string/push_notifications"
+                        android:textSize="@dimen/text_size_fourteen"
+                        android:textColor="@color/black"
+                        android:padding="@dimen/margin_ten"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/ic_push_notification"
+                        android:fontFamily="@font/montserrat_semibold"/>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/notificationSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        app:showText="false"
+                        android:layout_centerVertical="true"
+                        app:track="@drawable/custom_track"
+                        android:thumb="@drawable/custom_thumb"
+                        android:layout_alignParentRight="true"
+                        android:layout_height="wrap_content"
+                        android:checked="true"/>
+
+
+                </RelativeLayout>
+                <TextView
+                    style="@style/matchwrap"
+                    android:text="@string/receive_push_notifications"
+                    android:textSize="@dimen/text_size_twelve"
+                    android:textColor="@color/black"
+                    android:paddingLeft="@dimen/text_size_twelve"
+                    android:fontFamily="@font/montserrat_light"
+                    android:layout_gravity="center_horizontal" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/text_size_twelve"
+                    android:background="@color/bg_gray"
+                    />
+
+                <RelativeLayout
+                    android:id="@+id/rlContactus"
+                    android:layout_marginTop="@dimen/text_size_twelve"
+                    style="@style/matchwrap"
+                    android:padding="@dimen/text_size_twelve">
+                    <ImageView
+                        android:id="@+id/ic_chat_with_us"
+                        style="@style/wrapwrap"
+                        android:background="@drawable/chat_with_icon"
+                        />
+                    <TextView
+                        style="@style/wrapwrap"
+                        android:text="@string/chat_with_us"
+                        android:textSize="@dimen/text_size_fourteen"
+                        android:textColor="@color/black"
+                        android:padding="@dimen/margin_ten"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/ic_chat_with_us"
+                        android:fontFamily="@font/montserrat_semibold"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlShareProfille"
+                    style="@style/matchwrap"
+                    android:padding="@dimen/text_size_twelve"
+                    android:gravity=""
+                    >
+                    <ImageView
+                        android:id="@+id/ic_share_profile"
+                        style="@style/wrapwrap"
+                        android:background="@drawable/share_more_icon"
+                        />
+                    <TextView
+                        style="@style/wrapwrap"
+                        android:text="@string/share_profile"
+                        android:textSize="@dimen/text_size_fourteen"
+                        android:textColor="@color/black"
+                        android:padding="@dimen/margin_ten"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/ic_share_profile"
+                        android:fontFamily="@font/montserrat_semibold"/>
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/text_size_twelve"
+                    android:background="@color/bg_gray"
+                    />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/text_size_twelve"
+                    android:text="@string/general"
+                    android:padding="@dimen/text_size_twelve"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_fifteen"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"
+                    />
+
+                <RelativeLayout
+                    style="@style/matchwrap"
+                    android:padding="@dimen/text_size_twelve"
+                    android:gravity=""
+                    >
+                    <ImageView
+                        android:id="@+id/ic_privacy_and_safety"
+                        style="@style/wrapwrap"
+                        android:background="@drawable/safety_icon"
+                        />
+                    <TextView
+                        style="@style/wrapwrap"
+                        android:text="@string/privacy_and_safety"
+                        android:textSize="@dimen/text_size_fourteen"
+                        android:textColor="@color/black"
+                        android:padding="@dimen/margin_ten"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/ic_privacy_and_safety"
+                        android:fontFamily="@font/montserrat_semibold"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    style="@style/matchwrap"
+                    android:padding="@dimen/text_size_twelve"
+                    android:gravity=""
+                    >
+                    <ImageView
+                        android:id="@+id/ic_change_pass"
+                        style="@style/wrapwrap"
+                        android:background="@drawable/safety_icon"
+                        />
+                    <TextView
+                        style="@style/wrapwrap"
+                        android:text="@string/change_password"
+                        android:textSize="@dimen/text_size_fourteen"
+                        android:textColor="@color/black"
+                        android:onClick="@{(v) -> moreVM.onChangePasswordClick()}"
+                        android:padding="@dimen/margin_ten"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/ic_change_pass"
+                        android:fontFamily="@font/montserrat_semibold"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    style="@style/matchwrap"
+                    android:padding="@dimen/text_size_twelve"
+                    android:gravity=""
+                    >
+                    <ImageView
+                        android:id="@+id/ic_help_center"
+                        style="@style/wrapwrap"
+                        android:background="@drawable/help_icon"
+                        />
+                    <TextView
+                        style="@style/wrapwrap"
+                        android:text="@string/help_center"
+                        android:textSize="@dimen/text_size_fourteen"
+                        android:textColor="@color/black"
+                        android:padding="@dimen/margin_ten"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/ic_help_center"
+                        android:fontFamily="@font/montserrat_semibold"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    style="@style/matchwrap"
+                    android:padding="@dimen/text_size_twelve"
+                    android:gravity=""
+                    >
+                    <ImageView
+                        android:id="@+id/ic_tern_of_use"
+                        style="@style/wrapwrap"
+                        android:background="@drawable/terms_icon"
+                        />
+                    <TextView
+                        style="@style/wrapwrap"
+                        android:text="@string/terms_of_use"
+                        android:textSize="@dimen/text_size_fourteen"
+                        android:textColor="@color/black"
+                        android:padding="@dimen/margin_ten"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/ic_tern_of_use"
+                        android:fontFamily="@font/montserrat_semibold"/>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    style="@style/matchwrap"
+                    android:padding="@dimen/text_size_twelve"
+                    android:gravity=""
+                    >
+                    <ImageView
+                        android:id="@+id/ic_logout"
+                        style="@style/wrapwrap"
+                        android:background="@drawable/logout_icon"
+                        />
+                    <TextView
+                        style="@style/wrapwrap"
+                        android:text="@string/logout"
+                        android:textSize="@dimen/text_size_fourteen"
+                        android:textColor="@color/black"
+                        android:padding="@dimen/margin_ten"
+                        android:onClick="@{(v) -> moreVM.onUserLogoutClick()}"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/ic_logout"
+                        android:fontFamily="@font/montserrat_semibold"/>
+                </RelativeLayout>
+
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</layout>
