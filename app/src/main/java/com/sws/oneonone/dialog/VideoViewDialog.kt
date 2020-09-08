@@ -31,7 +31,7 @@ class VideoViewDialog : DialogFragment() {
     private var cacheDataSourceFactory: CacheDataSourceFactory? = null
     private var simpleExoPlayer: SimpleExoPlayer? = null
     private var simpleCache: SimpleCache? = null
-    var mMediaPlayer: MediaPlayer? = null
+
     var type = ""
     var url = ""
     var thumbNail = ""
@@ -76,7 +76,7 @@ class VideoViewDialog : DialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        mMediaPlayer = MediaPlayer()
+  
         if (type.equals("image")) {
             binding!!.videoUrl?.visibility = View.GONE
             binding!!.ivView?.visibility = View.VISIBLE
